@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lawnmower Man (1992) - Podcast Cheat Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-cyan: #22d3ee;
+            --accent-purple: #c084fc;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(148, 163, 184, 0.1);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            background-image: radial-gradient(circle at top right, rgba(34, 211, 238, 0.1), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(192, 132, 252, 0.1), transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 992px) {
+            .layout {
+                grid-template-columns: 1fr 350px;
+            }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-color: rgba(34, 211, 238, 0.3);
+        }
+
+        .card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        h2 {
+            color: var(--accent-cyan);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 24px;
+            background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+            border-radius: 4px;
+        }
+
+        h3 {
+            color: var(--accent-purple);
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+
+        strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .highlight {
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
+
+        /* Sidebar specific styles */
+        .sidebar .card {
+            position: sticky;
+            top: 20px;
+            background: rgba(15, 23, 42, 0.8);
+            border-color: var(--accent-cyan);
+        }
+
+        .fact-group {
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+        
+        .fact-group:last-child {
+            border-bottom: none;
+        }
+
+        .fact-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .fact-value {
+            color: #fff;
+            font-weight: 400;
+            font-size: 1.05rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The Lawnmower Man</h1>
+            <div class="subtitle">Podcast Cheat Sheet (1992)</div>
+        </header>
+
+        <div class="layout">
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <div class="grid">
+                    <div class="card full-width">
+                        <h2>History & The Lawsuit</h2>
+                        <ul>
+                            <li><strong>The Stephen King Lawsuit:</strong> King successfully sued to remove his name because the film bore "no meaningful resemblance" to his 1975 short story (which was about a naked satyr who ate grass while mowing for a Pan-worshipping service).</li>
+                            <li><strong>Historic Ruling:</strong> In July 1992, a federal judge ruled in King's favor—the first such ruling since 1922. King was awarded a <span class="highlight">$2.5 million settlement</span>. New Line Cinema even faced contempt of court charges later for failing to remove his name from VHS releases.</li>
+                            <li><strong>Creative Origin:</strong> The script originally started as an original screenplay called <em>CyberGod</em> by Brett Leonard and Gimel Everett, inspired by early VR technology they saw at "Cyberthon" in San Francisco.</li>
+                            <li><strong>Studio Pivot:</strong> The studio had the rights to King's title but couldn't adapt it. So they combined the <em>CyberGod</em> script with elements of King's story to make it marketable.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card full-width">
+                        <h2>Production & Groundbreaking CGI</h2>
+                        <ul>
+                            <li><strong>Angel Studios & Rockstar Games:</strong> The groundbreaking CGI (about 23-27 minutes of it) was created by Angel Studios, a company that was later purchased and became <strong>Rockstar San Diego</strong>, the developer behind the <em>Red Dead Redemption</em> franchise.</li>
+                            <li><strong>Not Hollywood Effects Houses:</strong> With a $10M budget, they couldn't afford major effects studios. They used smaller engineering and software firms—one had previously worked on Mexican tire commercials.</li>
+                            <li><strong>The "Gemini Process":</strong> To get digital effects onto film, the production used a technique called the "Gemini process," filming digital images off a high-resolution CRT screen frame-by-frame.</li>
+                            <li><strong>Early Motion Capture:</strong> An early form of motion capture was used for the scene where the priest is set on fire. The technology was actually originally designed for a golf-training company!</li>
+                            <li><strong>Real VR Gear:</strong> The film features actual VPL Research equipment (the "DataSuit" and "EyePhone"), provided by real-world VR pioneer Jaron Lanier.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h2>Market & Reception</h2>
+                        <ul>
+                            <li><strong>Box Office Hit:</strong> Huge financial success for New Line Cinema. Made on a modest $10M budget, it grossed over <span class="highlight">$32.1M domestically</span>.</li>
+                            <li><strong>James Bond Boost:</strong> The film’s financial success was noted by some as helping Pierce Brosnan land the role of James Bond.</li>
+                            <li><strong>Critical Consensus:</strong> Mixed to average (35% on Rotten Tomatoes). Critics found the script predictable and melodramatic.</li>
+                            <li><strong>Aesthetic Aging:</strong> The CGI and VR sequences, while groundbreaking at the time, were heavily criticized later for aging poorly ("corny" or "laughable").</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h2>Influences & Legacy</h2>
+                        <ul>
+                            <li><strong>Frankenstein & Flowers for Algernon:</strong> The core narrative is a cyberpunk re-imagining of <em>Flowers for Algernon</em> (boosting a cognitively disabled man's intelligence with tragic results) mixed with the Frankenstein "playing God" mythos.</li>
+                            <li><strong>Subsequent Movies:</strong> It led the charge for 90s "cyber-horror" and VR cinema, paving the way for <em>Virtuosity</em> (1995), <em>Johnny Mnemonic</em> (1995), and <em>eXistenZ</em> (1999).</li>
+                            <li><strong>James Cameron's Jealousy:</strong> Cameron was reportedly impressed by the VR, telling director Brett Leonard: "You beat me to virtual reality, you sonofabitch."</li>
+                        </ul>
+                    </div>
+
+                    <div class="card full-width">
+                        <h2>Director's Cut vs. Theatrical</h2>
+                        <p style="margin-top: -10px; margin-bottom: 15px; color: var(--text-muted);">The Theatrical Cut (108 mins) was heavily edited for pacing. The Director's Cut adds ~34 minutes (142 mins total), creating a slower but more emotionally cohesive story:</p>
+                        <ul>
+                            <li><strong>The Chimp Subplot:</strong> The Director's Cut features an extended opening where a test chimp escapes, gets a weapon, and reaches Jobe's shack. Jobe befriends it before authorities kill it, providing deep emotional context for Jobe's later actions.</li>
+                            <li><strong>Jobe's "Backdoor" Line:</strong> Jobe's final line ("A backdoor!") carries tragic weight in the Director's Cut because earlier he cries about being unable to provide a "backdoor" for his doomed chimp friend.</li>
+                            <li><strong>Expanded Character Arcs:</strong> Dr. Angelo's failing marriage is more fleshed out, and Angelo actively outsmarts corporate agents (giving him more agency). We also see more of Jobe's early life and abuse by the church caretaker.</li>
+                            <li><strong>Overall Tone:</strong> Fans consider the Director's Cut superior for character depth, comparing it to a mix of <em>Flowers for Algernon</em> and <em>Dr. Jekyll & Mr. Hyde</em>, though some find it drags compared to the Theatrical release.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card full-width">
+                        <h2>Sequels & Trivia</h2>
+                        <ul>
+                            <li><strong>A Cinematic "First":</strong> Widely credited with featuring one of the first fully computer-generated sex scenes in mainstream cinema.</li>
+                            <li><strong>Sequels:</strong> An official sequel, <em>Lawnmower Man 2: Beyond Cyberspace</em> (1996), was released but critically panned. In 2020, director Brett Leonard announced a potential reboot titled <em>L-Man Reborn</em>, side-stepping the legal issues with the original title.</li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Sidebar / Panel Area -->
+            <aside class="sidebar">
+                <div class="card">
+                    <h2>Ground Facts</h2>
+                    
+                    <div class="fact-group">
+                        <span class="fact-label">Release Date</span>
+                        <span class="fact-value">March 6, 1992 (US)</span>
+                    </div>
+
+                    <div class="fact-group">
+                        <span class="fact-label">Budget & Box Office</span>
+                        <span class="fact-value">$10 Million Budget<br>$32.1 Million Box Office</span>
+                    </div>
+
+                    <div class="fact-group">
+                        <span class="fact-label">Runtime</span>
+                        <span class="fact-value">108 min (Theatrical)<br>142 min (Director's Cut)</span>
+                    </div>
+
+                    <div class="fact-group">
+                        <span class="fact-label">Main Cast</span>
+                        <span class="fact-value">
+                            • Pierce Brosnan (Dr. Lawrence Angelo)<br>
+                            • Jeff Fahey (Jobe Smith)<br>
+                            • Jenny Wright (Marnie Burke)<br>
+                            • Geoffrey Lewis (Terry McKeen)<br>
+                            • Austin O'Brien (Peter Parkette)
+                        </span>
+                    </div>
+
+                    <div class="fact-group">
+                        <span class="fact-label">Crew</span>
+                        <span class="fact-value">
+                            • <strong>Director:</strong> Brett Leonard<br>
+                            • <strong>Writers:</strong> Brett Leonard & Gimel Everett<br>
+                            • <strong>Music:</strong> Dan Wyman<br>
+                            • <strong>Cinematography:</strong> Russell Carpenter
+                        </span>
+                    </div>
+
+                    <div class="fact-group">
+                        <span class="fact-label">Studios</span>
+                        <span class="fact-value">Allied Vision, Lane Pringle Productions<br><strong>Distributor:</strong> New Line Cinema</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
