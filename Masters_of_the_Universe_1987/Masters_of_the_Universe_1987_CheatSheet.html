@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masters of the Universe (1987) - Cheat Sheet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0914;
+            --card-bg: #1a112c;
+            --text-primary: #e2d9f3;
+            --text-secondary: #a395be;
+            --accent-pink: #ff2a6d;
+            --accent-cyan: #05d9e8;
+            --accent-yellow: #f1c40f;
+            --grid-color: rgba(5, 217, 232, 0.05);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-position: center center;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 2rem;
+        }
+
+        header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(255, 42, 109, 0.1), rgba(5, 217, 232, 0.1));
+            border-radius: 16px;
+            border: 1px solid rgba(255, 42, 109, 0.3);
+            box-shadow: 0 0 20px rgba(255, 42, 109, 0.2), inset 0 0 20px rgba(5, 217, 232, 0.1);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 15px rgba(255, 42, 109, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 1rem;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border-left: 4px solid var(--accent-cyan);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(5, 217, 232, 0.15);
+            border-left-color: var(--accent-pink);
+        }
+
+        .card h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent-pink);
+            margin-top: 0;
+            font-size: 1.8rem;
+            border-bottom: 1px solid rgba(255, 42, 109, 0.2);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2::before {
+            content: '⚡';
+            font-size: 1.2rem;
+        }
+
+        .card ul {
+            padding-left: 1.5rem;
+        }
+
+        .card li {
+            margin-bottom: 0.8rem;
+        }
+
+        .card strong {
+            color: var(--accent-cyan);
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            height: max-content;
+        }
+
+        .fact-box {
+            background: linear-gradient(180deg, var(--card-bg), #110b1d);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(5, 217, 232, 0.3);
+            box-shadow: 0 0 15px rgba(5, 217, 232, 0.1);
+        }
+
+        .fact-box h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent-yellow);
+            text-align: center;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+        }
+
+        .fact-item {
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .fact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .fact-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .fact-value {
+            display: block;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .fact-list {
+            margin: 0;
+            padding-left: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Masters of the Universe</h1>
+            <div class="subtitle">1987 • Podcast Cheat Sheet</div>
+        </header>
+
+        <main class="main-content">
+            <div class="card">
+                <h2>History & Production</h2>
+                <ul>
+                    <li><strong>Financial Turmoil:</strong> Produced by the infamous Cannon Films, the studio was on the brink of bankruptcy during filming. Cast and crew were constantly threatened with production shutdowns due to lack of payroll funds.</li>
+                    <li><strong>Earth Bound:</strong> To save money on expensive fantasy sets, the script was heavily rewritten to take place mostly on Earth rather than Eternia. The production even recycled miniature building sets previously used in <em>Blade Runner</em> and <em>Ghostbusters</em>.</li>
+                    <li><strong>Mattel's Mandate:</strong> Toy company Mattel heavily influenced the production. They insisted He-Man could not kill anyone on screen, which led the filmmakers to turn Skeletor’s henchmen into mechanical "robot" soldiers to allow for action without violating the rule.</li>
+                    <li><strong>The Climax:</strong> Cannon famously pulled the plug on the production while the film’s climactic battle was still being shot. To ensure the movie had an ending, director Gary Goddard personally financed the filming of the final confrontation between He-Man and Skeletor using a skeleton crew.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Market & Critical Reception</h2>
+                <ul>
+                    <li><strong>Commercial Failure:</strong> The film was a box office bomb, failing to recoup its $22 million budget. Its failure, combined with the poor performance of <em>Superman IV: The Quest for Peace</em> the same year, contributed significantly to the financial collapse of Cannon Films.</li>
+                    <li><strong>Critical Consensus:</strong> Reviews at the time were largely negative. Critics dismissed it as a cheesy, extended "toy commercial" and fans were disappointed by the Earth setting instead of a sprawling Eternian fantasy epic.</li>
+                    <li><strong>The Bright Spot:</strong> Despite the overall negative reception, Frank Langella’s theatrical, Shakespearean performance as Skeletor was—and remains—almost universally praised as the absolute highlight of the film.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Versions & Cuts</h2>
+                <ul>
+                    <li><strong>No Director's Cut:</strong> There is no official "Director’s Cut." The theatrical release is the only version available.</li>
+                    <li><strong>The Extended Farewell:</strong> Director Gary Goddard noted that the film’s ending originally had a longer, more emotional "Wizard of Oz" feel where Julie had an individual farewell with each Eternian companion. The studio demanded this be significantly trimmed.</li>
+                    <li><strong>Scrapped Concepts:</strong> A major sequence involving caves beneath Castle Grayskull and the Snakemen was planned but ultimately deemed too costly to produce and was cut before filming.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Influences & Legacy</h2>
+                <ul>
+                    <li><strong>The Jack Kirby Influence:</strong> Director Gary Goddard was a massive fan of legendary comic book artist Jack Kirby and drew heavily from his "Fourth World" (New Gods) series for the film's aesthetic. Goddard attempted to include a dedication to Kirby in the closing credits, but the studio removed it.</li>
+                    <li><strong>The Repurposed Sequel:</strong> A sequel was planned that would have featured surfer Laird Hamilton as He-Man. After the first film flopped and Mattel refused to participate further, Cannon canceled it to avoid licensing fees. The pre-built sets and costumes were instead repurposed for the 1989 Jean-Claude Van Damme film <em>Cyborg</em>.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Cool or Nostalgia Factor</h2>
+                <ul>
+                    <li><strong>Aesthetic & Vibe:</strong> It holds a very specific charm for lovers of 80s practical effects, synth scores, and campy sci-fi/fantasy. It feels like a chaotic blend of <em>Star Wars</em> and <em>Conan the Barbarian</em> executed on a shoestring budget.</li>
+                    <li><strong>The Verdict:</strong> While the movie as a whole leans heavily into being a nostalgic artifact for He-Man fans or lovers of "so bad it's good" cinema, Frank Langella's Skeletor is genuinely, unequivocally <strong>cool</strong>. He elevates the material entirely.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Trivia & Fun Facts</h2>
+                <ul>
+                    <li><strong>Lundgren's Accent:</strong> Fresh off <em>Rocky IV</em>, Dolph Lundgren was cast primarily for his physique. Not fluent in English, the director originally planned to dub his voice. Tight schedules forced them to use Lundgren's real voice. Lundgren has cited it as one of his least favorite performances.</li>
+                    <li><strong>Heavy Wardrobe:</strong> Meg Foster (Evil-Lyn) wore a rigid breastplate costume that weighed 45 lbs. It was so restrictive she couldn't sit down during the entire shoot, inadvertently giving her character a stiff, "slinky" posture.</li>
+                    <li><strong>Friends Connection:</strong> The film marked the feature film debut of Courteney Cox (Julie).</li>
+                    <li><strong>Pigboy Contest:</strong> Mattel held a contest for a child to appear in the film. The winner, 13-year-old Richard Szponder, was cast as "Pigboy" solely because all the Earth scenes had already been filmed by the time he was selected.</li>
+                    <li><strong>Orko Missing:</strong> Fan-favorite floating character Orko was deemed too expensive and difficult to translate to live-action. The character Gwildor was created as a lower-cost, practical-effects replacement.</li>
+                </ul>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="fact-box">
+                <h2>Ground Facts</h2>
+                
+                <div class="fact-item">
+                    <span class="fact-label">Release Date</span>
+                    <span class="fact-value">August 7, 1987</span>
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-label">Budget vs Box Office</span>
+                    <span class="fact-value">$22M / $17.3M (Domestic)</span>
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-label">Runtime</span>
+                    <span class="fact-value">106 minutes</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Key Crew</span>
+                    <span class="fact-value" style="font-size: 0.95rem;">Gary Goddard (Director) <br> David Odell (Writer)</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Studios</span>
+                    <span class="fact-value" style="font-size: 0.95rem;">Cannon Films, Golan-Globus, Mattel</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Main Cast</span>
+                    <ul class="fact-list">
+                        <li>Dolph Lundgren (He-Man)</li>
+                        <li>Frank Langella (Skeletor)</li>
+                        <li>Courteney Cox (Julie Winston)</li>
+                        <li>Meg Foster (Evil-Lyn)</li>
+                        <li>Jon Cypher (Man-At-Arms)</li>
+                        <li>Chelsea Field (Teela)</li>
+                        <li>Billy Barty (Gwildor)</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
