@@ -33,9 +33,10 @@
 * **The "Gemini Process":** To get digital effects onto film, the production used a technique called the "Gemini process," filming digital images off a high-resolution CRT screen frame-by-frame.
 * **Early Motion Capture:** An early form of motion capture was used for the scene where the priest is set on fire. The technology was actually originally designed for a golf-training company!
 * **Real VR Gear:** The film features actual VPL Research equipment (the "DataSuit" and "EyePhone"), provided by real-world VR pioneer Jaron Lanier.
+* **The "Cyber-delic" Aesthetic:** The film popularized 90s techno-futurism with neon wireframes, endless glowing grids (borrowing from *Tron*), and psychedelic liquid metal textures.
 
 ## Market & Reception
-* **Box Office Hit:** Huge financial success for New Line Cinema. Made on a modest $10M budget, it grossed over **$32.1M domestically**.
+* **Box Office Hit:** Huge financial success for New Line Cinema. Made on a modest $10M budget, it grossed over **$32.1M domestically**, debuting at **#2 behind *Wayne's World***.
 * **James Bond Boost:** The film’s financial success was noted by some as helping Pierce Brosnan land the role of James Bond.
 * **Critical Consensus:** Mixed to average (35% on Rotten Tomatoes). Critics found the script predictable and melodramatic.
 * **Aesthetic Aging:** The CGI and VR sequences, while groundbreaking at the time, were heavily criticized later for aging poorly ("corny" or "laughable").
@@ -54,4 +55,8 @@ The Theatrical Cut (108 mins) was heavily edited by the studio for pacing. The D
 
 ## Sequels & Trivia
 * **A Cinematic "First":** Widely credited with featuring one of the first fully computer-generated sex scenes in mainstream cinema.
+* **Pre-007 Pierce Brosnan:** Brosnan spends much of the film barefoot, chain-smoking, and thrashing in a VR headset. This was released during his "wilderness years" before he finally secured James Bond in 1995.
+* **A Pre-Breaking Bad Dean Norris:** The villainous "Director" is played by Dean Norris (Hank Schrader), who reportedly never blinks in his scenes to appear more unnerving.
+* **Austin O'Brien's Debut:** This was the acting debut for the kid playing Peter, which immediately landed him his co-lead role in *Last Action Hero* (1993).
+* **The Twin Peaks Connection:** Jenny Wright (Marnie Burke) was fresh off a memorable run on the cult-classic TV show *Twin Peaks*.
 * **Sequels:** An official sequel, *Lawnmower Man 2: Beyond Cyberspace* (1996), was released but critically panned. In 2020, director Brett Leonard announced a potential reboot titled *L-Man Reborn*, side-stepping the legal issues with the original title.
