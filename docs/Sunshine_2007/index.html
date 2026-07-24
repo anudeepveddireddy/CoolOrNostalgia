@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunshine (2007) - Podcast Cheat Sheet</title>
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: #1f2833;
+            --text-main: #c5c6c7;
+            --text-heading: #66fcf1;
+            --accent: #45a29e;
+            --sun-glow: #f39c12;
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            color: var(--sun-glow);
+            text-shadow: 0 0 10px var(--sun-glow), 0 0 20px #e67e22;
+            font-size: 3rem;
+            margin: 0;
+        }
+        
+        .subtitle {
+            color: var(--text-heading);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .main-content {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar {
+            flex: 1;
+            position: sticky;
+            top: 20px;
+            height: max-content;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border-left: 4px solid var(--accent);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-left-color: var(--sun-glow);
+        }
+
+        .card h2 {
+            color: var(--text-heading);
+            margin-top: 0;
+            border-bottom: 1px solid rgba(102, 252, 241, 0.2);
+            padding-bottom: 10px;
+        }
+
+        ul {
+            line-height: 1.6;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #fff;
+        }
+
+        .ground-facts {
+            background: linear-gradient(145deg, #1f2833, #0b0c10);
+            border: 1px solid var(--accent);
+        }
+
+        .ground-facts h2 {
+            color: var(--sun-glow);
+            border-bottom-color: rgba(243, 156, 18, 0.3);
+        }
+        
+        .ground-facts ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .ground-facts li {
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+            padding-bottom: 8px;
+        }
+        
+        .ground-facts li:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sunshine</h1>
+        <div class="subtitle">Podcast Research Cheat Sheet (2007)</div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            
+            <div class="card">
+                <h2>History & Production</h2>
+                <ul>
+                    <li><strong>Origin:</strong> Written by Alex Garland, envisioned as a hard sci-fi film exploring man's encounter with the sublime, ultimately leading to madness.</li>
+                    <li><strong>Method Acting:</strong> Director Danny Boyle required the main cast to live together in an apartment for three months before filming to build genuine camaraderie and simulate the claustrophobic conditions of the spaceship Icarus II.</li>
+                    <li><strong>Scientific Realism:</strong> The production consulted with prominent physicist Brian Cox to ground the high-concept premise (like Q-Balls). While they prioritized atmosphere over perfect scientific accuracy, the consultation added intellectual weight.</li>
+                    <li><strong>VFX Struggles:</strong> Boyle insisted on using a single visual effects house (London's Moving Picture Co.) to maintain strict quality control. This bottleneck caused the film to run behind schedule and over budget.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Market & Critical Reception</h2>
+                <ul>
+                    <li><strong>Box Office:</strong> It was a commercial disappointment, grossing only about $35 million against its $40 million budget. It suffered from a limited initial marketing push and a staggered release strategy.</li>
+                    <li><strong>Critical Consensus:</strong> The film received generally positive reviews. Critics highly praised its stunning visuals, suffocating tension, and the airtight script of the first two acts.</li>
+                    <li><strong>The Third Act Controversy:</strong> The film is notoriously divisive due to its final act, which abruptly shifts from a tense, psychological sci-fi thriller into a slasher-horror movie involving the character Pinbacker. Many critics and audiences found this transition jarring.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Versions & Cuts</h2>
+                <ul>
+                    <li><strong>Theatrical Cut:</strong> There is only one official feature-length cut of the film. No "Director's Cut" exists.</li>
+                    <li><strong>Deleted Scenes:</strong> Home releases include several deleted scenes with Boyle's commentary, including an alternate ending, "Searle Meets Capa", and "Rough Docking Procedure", but none were ever integrated into a new cut.</li>
+                    <li><strong>Scrapped Trilogy:</strong> Writer Alex Garland originally envisioned <em>Sunshine</em> as the first part of a "planetary trilogy". The poor box office returns killed any chance of sequels.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Influences & Legacy</h2>
+                <ul>
+                    <li><strong>Influences:</strong> Heavily influenced by classic sci-fi like Stanley Kubrick's <em>2001: A Space Odyssey</em> and Andrei Tarkovsky's <em>Solaris</em> (focusing on psychological deterioration and the religious/existential themes of space). Boyle also cited the <em>Alien</em> franchise ("mismatched crew in peril").</li>
+                    <li><strong>Musical Legacy:</strong> The film's most enduring cultural footprint is arguably John Murphy's track "Adagio in D Minor" ("Capa's Jump"). It has become one of the most recognizable and frequently reused pieces of music in movie trailers (e.g., <em>The Walking Dead</em>, <em>X-Men</em>) and pop culture.</li>
+                    <li><strong>Director's Evolution:</strong> The film was a crucial stepping stone for Alex Garland's thematic obsession with human confrontation of the sublime and entities beyond understanding, which he later explored in <em>Ex Machina</em> and <em>Annihilation</em>.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Cool or Nostalgia Factor</h2>
+                <ul>
+                    <li><strong>Cool Factor:</strong> Extremely high. Visually, <em>Sunshine</em> holds up impeccably well. The production design of the Icarus II and the depiction of the Sun remain breathtaking. The philosophical underpinnings and intense performances (especially from Chris Evans and Cillian Murphy) make it a gripping, serious sci-fi epic.</li>
+                    <li><strong>Nostalgia:</strong> While it has a cult following, its "flop" status means it isn't burdened by mainstream nostalgia. It's often rediscovered by modern audiences and hailed as an underrated, "misunderstood masterpiece" that paved the way for modern ambitious space epics like <em>Interstellar</em>.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Trivia & Fun Facts</h2>
+                <ul>
+                    <li><strong>Michelle Yeoh's Swap:</strong> Michelle Yeoh's audition was so impressive that Danny Boyle offered her any role she wanted, resulting in a gender swap for the character of Corazon.</li>
+                    <li><strong>Unexpected Castings:</strong> Cliff Curtis gave the best audition for Searle, a role originally written for an older British man.</li>
+                    <li><strong>"California Doubling":</strong> The final snowy scene set in Sydney, Australia, was actually filmed in Stockholm, Sweden, with the Sydney Opera House superimposed later in post-production.</li>
+                    <li><strong>Realistic Weight:</strong> During a scene where Capa is in a heavy spacesuit, stagehands literally held actor Cillian Murphy down off-camera to make his movements look genuinely labored and heavy.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="sidebar">
+            <div class="card ground-facts">
+                <h2>Ground Facts</h2>
+                <ul>
+                    <li><strong>Release:</strong> April 5, 2007 (UK) / July 20, 2007 (US)</li>
+                    <li><strong>Runtime:</strong> 107 minutes</li>
+                    <li><strong>Budget:</strong> ~$40 million</li>
+                    <li><strong>Box Office:</strong> ~$35 million (Flop)</li>
+                    <li><strong>Director:</strong> Danny Boyle</li>
+                    <li><strong>Writer:</strong> Alex Garland</li>
+                    <li><strong>Key Cast:</strong> 
+                        <br>- Cillian Murphy (Capa)
+                        <br>- Chris Evans (Mace)
+                        <br>- Rose Byrne (Cassie)
+                        <br>- Michelle Yeoh (Corazon)
+                        <br>- Cliff Curtis (Searle)
+                        <br>- Troy Garity (Harvey)
+                        <br>- Hiroyuki Sanada (Kaneda)
+                        <br>- Benedict Wong (Trey)
+                        <br>- Mark Strong (Pinbacker)
+                    </li>
+                    <li><strong>Music:</strong> John Murphy & Underworld</li>
+                    <li><strong>Studios:</strong> DNA Films, UK Film Council, Fox Searchlight Pictures</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
