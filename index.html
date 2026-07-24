@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoolOrNostalgia - Cheat Sheets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0914;
+            --card-bg: #1a112c;
+            --text-primary: #e2d9f3;
+            --text-secondary: #a395be;
+            --accent-pink: #ff2a6d;
+            --accent-cyan: #05d9e8;
+            --accent-yellow: #f1c40f;
+            --grid-color: rgba(5, 217, 232, 0.05);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-position: center center;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            flex: 1;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 15px rgba(255, 42, 109, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            color: var(--accent-yellow);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 1rem;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .movie-card {
+            background: linear-gradient(180deg, var(--card-bg), #110b1d);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(5, 217, 232, 0.3);
+            box-shadow: 0 0 15px rgba(5, 217, 232, 0.1);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 42, 109, 0.2);
+            border-color: var(--accent-pink);
+        }
+
+        .movie-card h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent-cyan);
+            margin: 0 0 0.5rem 0;
+            font-size: 1.8rem;
+            transition: color 0.3s ease;
+        }
+        
+        .movie-card:hover h2 {
+            color: var(--accent-pink);
+        }
+
+        .movie-year {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        .view-button {
+            margin-top: auto;
+            background: transparent;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .movie-card:hover .view-button {
+            background: var(--accent-pink);
+            border-color: var(--accent-pink);
+            color: white;
+            box-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cool Or Nostalgia</h1>
+            <div class="subtitle">Podcast Hub</div>
+        </header>
+
+        <div class="movie-grid">
+            <a href="Predator_1987/Predator_1987_CheatSheet.html" class="movie-card">
+                <h2>Predator</h2>
+                <div class="movie-year">1987</div>
+                <div class="view-button">View Cheat Sheet</div>
+            </a>
+            
+            <a href="Masters_of_the_Universe_1987/Masters_of_the_Universe_1987_CheatSheet.html" class="movie-card">
+                <h2>Masters of the Universe</h2>
+                <div class="movie-year">1987</div>
+                <div class="view-button">View Cheat Sheet</div>
+            </a>
+
+            <a href="Lawnemower_Man/LawnmowerMan_CheatSheet.html" class="movie-card">
+                <h2>The Lawnmower Man</h2>
+                <div class="movie-year">1992</div>
+                <div class="view-button">View Cheat Sheet</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

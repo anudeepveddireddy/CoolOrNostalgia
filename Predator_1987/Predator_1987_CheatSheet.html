@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predator (1987) - Cheat Sheet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0d0914;
+            --card-bg: #1a112c;
+            --text-primary: #e2d9f3;
+            --text-secondary: #a395be;
+            --accent-pink: #ff2a6d;
+            --accent-cyan: #05d9e8;
+            --accent-yellow: #f1c40f;
+            --grid-color: rgba(5, 217, 232, 0.05);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-position: center center;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 2rem;
+        }
+
+        header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(255, 42, 109, 0.1), rgba(5, 217, 232, 0.1));
+            border-radius: 16px;
+            border: 1px solid rgba(255, 42, 109, 0.3);
+            box-shadow: 0 0 20px rgba(255, 42, 109, 0.2), inset 0 0 20px rgba(5, 217, 232, 0.1);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 15px rgba(255, 42, 109, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 1rem;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            border-left: 4px solid var(--accent-cyan);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(5, 217, 232, 0.15);
+            border-left-color: var(--accent-pink);
+        }
+
+        .card h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent-pink);
+            margin-top: 0;
+            font-size: 1.8rem;
+            border-bottom: 1px solid rgba(255, 42, 109, 0.2);
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card h2::before {
+            content: '⚡';
+            font-size: 1.2rem;
+        }
+
+        .card ul {
+            padding-left: 1.5rem;
+        }
+
+        .card li {
+            margin-bottom: 0.8rem;
+        }
+
+        .card strong {
+            color: var(--accent-cyan);
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            height: max-content;
+        }
+
+        .fact-box {
+            background: linear-gradient(180deg, var(--card-bg), #110b1d);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(5, 217, 232, 0.3);
+            box-shadow: 0 0 15px rgba(5, 217, 232, 0.1);
+        }
+
+        .fact-box h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent-yellow);
+            text-align: center;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+        }
+
+        .fact-item {
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .fact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .fact-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .fact-value {
+            display: block;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .fact-list {
+            margin: 0;
+            padding-left: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Predator</h1>
+            <div class="subtitle">1987 • Podcast Cheat Sheet</div>
+        </header>
+
+        <main class="main-content">
+            <div class="card">
+                <h2>History & Production</h2>
+                <ul>
+                    <li><strong>The "Original" Creature Failure:</strong> Production initially hit a major wall due to the original alien suit, which was deemed a disaster. The suit proved cumbersome and ineffective, nearly halting filming entirely.</li>
+                    <li><strong>The Stan Winston Rescue:</strong> Arnold Schwarzenegger recommended his friend Stan Winston to design a new creature. Winston famously created the iconic Predator design in just six weeks, turning a potential failure into a legendary character.</li>
+                    <li><strong>Harsh Filming Conditions:</strong> The film was shot in the jungles of Palenque, Mexico. The cast and crew endured intense tropical heat, hazardous terrain, and grueling conditions that were reportedly as challenging as the battles on screen.</li>
+                    <li><strong>The "Van Damme" Incident:</strong> Early in production, martial artist Jean-Claude Van Damme was cast as the Predator. He was ultimately fired from the role, with reports citing his difficulty with the original suit (which he found stifling and difficult to breathe in) and his desire for more action sequences.</li>
+                    <li><strong>Practical Mastery:</strong> The Predator was intentionally designed as "a man in a suit" (played by the 7'2" Kevin Peter Hall) to make the creature feel grounded and physical rather than like a generic monster. The invisibility cloak was created using a "red suit" trick layered over background footage with an optical printer.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Market & Critical Reception</h2>
+                <ul>
+                    <li><strong>Initial Response:</strong> Upon its release in June 1987, <em>Predator</em> was met with mixed to negative reviews from many contemporary critics. It was often viewed through the lens of a standard, albeit high-budget, "macho" action movie typical of the era.</li>
+                    <li><strong>Long-term Appraisal:</strong> Over the decades, the film's reputation improved significantly. It is now celebrated for its innovative subversion of 1980s action tropes—transitioning from a standard military mission into a claustrophobic, survival-horror film.</li>
+                    <li><strong>Market Context & Box Office:</strong> 1987 was a strong year for action cinema (<em>Lethal Weapon</em>, <em>RoboCop</em>). Produced on a budget of approximately $15 million, the film was a solid commercial success, grossing roughly $98.3 million worldwide.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Versions & Cuts</h2>
+                <ul>
+                    <li><strong>No "Director's Cut":</strong> There is no official "Director’s Cut" of the 1987 film <em>Predator</em>. The version of the film that was released in theaters is the version intended by director John McTiernan and remains the definitive cut.</li>
+                    <li><strong>Deleted Scenes:</strong> While various deleted scenes exist, they were never integrated into a formal "Director’s Cut". Rumors of alternate cuts often stem from confusion regarding deleted scenes or aspect ratio differences.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Influences & Legacy</h2>
+                <ul>
+                    <li><strong>Genre Hybridization:</strong> <em>Predator</em> is widely recognized for masterfully blending the "muscle-bound" action tropes of the 1980s with slasher-style horror, subverting the expectations of hyper-masculine cinema.</li>
+                    <li><strong>Directorial Legacy:</strong> Director John McTiernan’s use of "impotent" firefights—where characters fire wildly at unseen enemies—influenced his subsequent work, including <em>Die Hard</em>.</li>
+                    <li><strong>Massive Franchise:</strong> The original film spawned an expansive media universe, including sequels like <em>Predator 2</em>, <em>Predators</em>, <em>Prey</em>, and crossovers like <em>Alien vs. Predator</em>.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Cool or Nostalgia Factor</h2>
+                <ul>
+                    <li><strong>Aesthetic & Vibe:</strong> The film has aged remarkably well. The practical effects and Stan Winston’s iconic creature design are genuinely timeless. The thermal vision POV remains a distinct and effective cinematic technique.</li>
+                    <li><strong>The Verdict:</strong> Far from being purely a nostalgic artifact, <em>Predator</em> remains an unequivocally <strong>cool</strong> subversion of 80s action, holding up technically and thematically as a masterclass in sci-fi horror pacing.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Trivia & Fun Facts</h2>
+                <ul>
+                    <li><strong>The "Rocky" Joke:</strong> The movie's premise was reportedly sparked by a joke circulating in Hollywood: after <em>Rocky IV</em>, the only opponent left for Rocky to fight was an alien. Screenwriters Jim and John Thomas took the concept and ran with it.</li>
+                    <li><strong>Bodyguard for a Cast Member:</strong> Sonny Landham (Billy) had such a volatile reputation that the studio hired a dedicated bodyguard to follow him 24/7 to ensure he didn't get into fights or trouble on set.</li>
+                    <li><strong>The "Clicking" Sound:</strong> The creature’s signature clicking noise was created by voice actor Peter Cullen, who is also well-known for voicing Optimus Prime in <em>Transformers</em>.</li>
+                    <li><strong>Suit Complications:</strong> The iconic Predator "body netting" was added as a practical solution to hide structural issues with the original creature suit, where parts would fall off during filming.</li>
+                    <li><strong>On-Set Gym:</strong> Arnold Schwarzenegger and his co-stars famously built a massive gym on-site, shipping equipment to Mexico to maintain their physique.</li>
+                </ul>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="fact-box">
+                <h2>Ground Facts</h2>
+                
+                <div class="fact-item">
+                    <span class="fact-label">Release Date</span>
+                    <span class="fact-value">June 12, 1987</span>
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-label">Budget vs Box Office</span>
+                    <span class="fact-value">~$15M / $98.3M (Worldwide)</span>
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-label">Runtime</span>
+                    <span class="fact-value">107 minutes</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Key Crew</span>
+                    <span class="fact-value" style="font-size: 0.95rem;">John McTiernan (Director) <br> Jim & John Thomas (Writers) <br> Stan Winston (Creature Design)</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Studios</span>
+                    <span class="fact-value" style="font-size: 0.95rem;">20th Century Fox, Silver Pictures</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Main Cast</span>
+                    <ul class="fact-list">
+                        <li>Arnold Schwarzenegger (Dutch)</li>
+                        <li>Carl Weathers (Dillon)</li>
+                        <li>Jesse Ventura (Blain)</li>
+                        <li>Bill Duke (Mac)</li>
+                        <li>Sonny Landham (Billy)</li>
+                        <li>Kevin Peter Hall (The Predator)</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
