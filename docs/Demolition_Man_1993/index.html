@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demolition Man (1993) - Cheat Sheet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true, theme:'dark', themeVariables:{primaryColor:'#1a112c', edgeColor:'#05d9e8', primaryBorderColor:'#ff2a6d', primaryTextColor:'#e2d9f3', background:'#0d0914'}});</script>
+    <style>
+        :root {
+            --bg-color: #0d0914;
+            --card-bg: #1a112c;
+            --card-inner: #120b20;
+            --text-primary: #e2d9f3;
+            --text-secondary: #a395be;
+            --accent-pink: #ff2a6d;
+            --accent-cyan: #05d9e8;
+            --accent-yellow: #f1c40f;
+            --accent-ice: #8be9fd;
+            --grid-color: rgba(5, 217, 232, 0.05);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-position: center center;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 2rem;
+        }
+
+        .nav-back {
+            grid-column: 1 / -1;
+            margin-bottom: -1rem;
+        }
+
+        .nav-back a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .nav-back a:hover {
+            color: var(--accent-pink);
+            transform: translateX(-4px);
+        }
+
+        header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 42, 109, 0.12), rgba(5, 217, 232, 0.12));
+            border-radius: 16px;
+            border: 1px solid rgba(255, 42, 109, 0.3);
+            box-shadow: 0 0 25px rgba(255, 42, 109, 0.2), inset 0 0 25px rgba(5, 217, 232, 0.1);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 15px rgba(255, 42, 109, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 0.8rem;
+        }
+
+        .tagline {
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+            color: var(--accent-yellow);
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 14px;
+            padding: 2rem;
+            border-left: 4px solid var(--accent-cyan);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(5, 217, 232, 0.18);
+            border-left-color: var(--accent-pink);
+        }
+
+        .card.featured {
+            border-left-color: var(--accent-yellow);
+            background: linear-gradient(180deg, rgba(26, 17, 44, 0.95), rgba(18, 11, 32, 0.95));
+            border: 1px solid rgba(241, 196, 15, 0.3);
+            border-left: 5px solid var(--accent-yellow);
+        }
+
+        .card.alert-card {
+            border-left-color: var(--accent-pink);
+            background: linear-gradient(180deg, rgba(35, 15, 35, 0.9), rgba(20, 10, 25, 0.95));
+            border: 1px solid rgba(255, 42, 109, 0.3);
+            border-left: 5px solid var(--accent-pink);
+        }
+
+        .card h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent-pink);
+            margin-top: 0;
+            font-size: 1.8rem;
+            border-bottom: 1px solid rgba(255, 42, 109, 0.25);
+            padding-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card.featured h2 {
+            color: var(--accent-yellow);
+            border-bottom-color: rgba(241, 196, 15, 0.25);
+        }
+
+        .card.alert-card h2 {
+            color: var(--accent-pink);
+            border-bottom-color: rgba(255, 42, 109, 0.35);
+        }
+
+        .card h2 .icon {
+            font-size: 1.3rem;
+        }
+
+        .card h3 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card ul {
+            padding-left: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .card li {
+            margin-bottom: 0.9rem;
+        }
+
+        .card strong {
+            color: var(--accent-cyan);
+        }
+
+        .card p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        /* Story Progression Visualizer */
+        .timeline-visualizer {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            position: relative;
+        }
+
+        .timeline-node {
+            background: var(--card-inner);
+            border: 1px solid rgba(5, 217, 232, 0.2);
+            border-radius: 10px;
+            padding: 1.3rem 1.5rem;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .timeline-node:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 15px rgba(5, 217, 232, 0.2);
+            transform: translateX(4px);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.6rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .timeline-phase {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+
+        .timeline-badge {
+            font-size: 0.75rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+
+        .badge-1996 {
+            background: rgba(255, 42, 109, 0.2);
+            color: var(--accent-pink);
+            border: 1px solid var(--accent-pink);
+        }
+
+        .badge-2032 {
+            background: rgba(5, 217, 232, 0.2);
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+        }
+
+        .badge-climax {
+            background: rgba(241, 196, 15, 0.2);
+            color: var(--accent-yellow);
+            border: 1px solid var(--accent-yellow);
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .timeline-details {
+            margin-top: 0.6rem;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+            padding-top: 0.5rem;
+        }
+
+        .mermaid-container {
+            background: #08050e;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(5, 217, 232, 0.2);
+            margin-top: 1.5rem;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        /* Analysis Box / Plot Holes */
+        .issue-block {
+            background: rgba(20, 10, 25, 0.7);
+            border: 1px solid rgba(255, 42, 109, 0.25);
+            border-radius: 10px;
+            padding: 1.2rem 1.4rem;
+            margin-bottom: 1.2rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .issue-block:hover {
+            border-color: var(--accent-pink);
+        }
+
+        .issue-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent-pink);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .issue-tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.15rem 0.5rem;
+            border-radius: 12px;
+            background: rgba(255, 42, 109, 0.2);
+            color: #ff7b9f;
+            border: 1px solid rgba(255, 42, 109, 0.4);
+        }
+
+        .issue-desc {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .issue-podcast-take {
+            font-size: 0.88rem;
+            color: var(--accent-yellow);
+            background: rgba(241, 196, 15, 0.08);
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-yellow);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .fact-box {
+            background: linear-gradient(180deg, var(--card-bg), #110b1d);
+            border-radius: 14px;
+            padding: 2rem;
+            border: 1px solid rgba(5, 217, 232, 0.3);
+            box-shadow: 0 0 20px rgba(5, 217, 232, 0.12);
+        }
+
+        .fact-box h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent-yellow);
+            text-align: center;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(241, 196, 15, 0.25);
+            padding-bottom: 0.8rem;
+        }
+
+        .fact-item {
+            margin-bottom: 1.1rem;
+            padding-bottom: 1.1rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .fact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .fact-label {
+            display: block;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .fact-value {
+            display: block;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+        }
+
+        .fact-list {
+            margin: 0;
+            padding-left: 1.2rem;
+            font-size: 0.92rem;
+        }
+
+        .fact-list li {
+            margin-bottom: 0.35rem;
+        }
+
+        .morality-violation {
+            background: rgba(255, 42, 109, 0.12);
+            border: 1px solid var(--accent-pink);
+            border-radius: 10px;
+            padding: 1.2rem;
+            text-align: center;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .morality-violation .beep {
+            color: var(--accent-pink);
+            font-weight: 800;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+        }
+
+        .morality-violation p {
+            margin: 0.5rem 0 0 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 950px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+            }
+            h1 {
+                font-size: 2.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="nav-back">
+            <a href="../index.html">← Back to Podcast Hub</a>
+        </div>
+
+        <header>
+            <h1>Demolition Man</h1>
+            <div class="subtitle">1993 • Podcast Cheat Sheet</div>
+            <div class="tagline">"The 21st Century's Most Dangerous Cop. The 21st Century's Most Ruthless Killer. The Future Isn't Big Enough for Both of Them."</div>
+        </header>
+
+        <main class="main-content">
+
+            <!-- VISUAL STORY PROGRESSION SECTION -->
+            <div class="card featured">
+                <h2><span class="icon">🎬</span> Visual Story Progression: The San Angeles Timeline</h2>
+                <p>A step-by-step narrative breakdown of John Spartan's journey from 1996 urban warfare to 2032 utopian dystopia.</p>
+                
+                <div class="timeline-visualizer">
+                    
+                    <div class="timeline-node">
+                        <div class="timeline-header">
+                            <span class="timeline-phase">Phase 1: The 1996 Urban Hellscape & The Fall</span>
+                            <span class="timeline-badge badge-1996">1996 Prologue</span>
+                        </div>
+                        <p class="timeline-desc">
+                            LAPD Sgt. John "The Demolition Man" Spartan bungee-jumps into an inferno to capture psychopathic crime lord Simon Phoenix. Phoenix sets off massive C4 charges, framing Spartan for the deaths of 30 hidden bus hostages. Both men are convicted and sentenced to cryogenic freeze-rehabilitation in the newly built California Cryo-Penitentiary.
+                        </p>
+                        <div class="timeline-details">
+                            <strong>Key Beats:</strong> Destruction of LA warehouse • Spartan's unyielding brutality • 70-year cryogenic sentence imposed.
+                        </div>
+                    </div>
+
+                    <div class="timeline-node">
+                        <div class="timeline-header">
+                            <span class="timeline-phase">Phase 2: 2032 Awakening – The "Utopia" of San Angeles</span>
+                            <span class="timeline-badge badge-2032">Act I</span>
+                        </div>
+                        <p class="timeline-desc">
+                            During a routine parole hearing in the megalopolis of San Angeles (formed after the 2010 "Big One"), Phoenix utters a voice-override code, effortlessly slaughters the unarmed cryo-guards, and escapes. The pacified police department—bound by verbal compliance codes and non-violent protocols—is utterly paralyzed by a "Code 187" (murder).
+                        </p>
+                        <div class="timeline-details">
+                            <strong>Key Beats:</strong> Dr. Raymond Cocteau's sanitized society • Banned meat, salt, swearing & fluid exchange • Lt. Lenina Huxley champions unfreezing Spartan.
+                        </div>
+                    </div>
+
+                    <div class="timeline-node">
+                        <div class="timeline-header">
+                            <span class="timeline-phase">Phase 3: Culture Shock & The Museum Firefight</span>
+                            <span class="timeline-badge badge-2032">Act II-A</span>
+                        </div>
+                        <p class="timeline-desc">
+                            Spartan is defrosted after 36 years. Baffled by the Three Seashells, radio commercial jingles, and touchless virtual sex, he immediately deduces Phoenix's move: raiding the San Angeles Museum to steal obsolete 20th-century firearms. Spartan intercepts Phoenix, discovering Phoenix possesses high-level computer hacking and martial arts skills he never had in 1996.
+                        </p>
+                        <div class="timeline-details">
+                            <strong>Key Beats:</strong> Swearing to get paper tickets • Dinner at Taco Bell (the sole survivor of the Franchise Wars) • Armory museum shootout.
+                        </div>
+                    </div>
+
+                    <div class="timeline-node">
+                        <div class="timeline-header">
+                            <span class="timeline-phase">Phase 4: The Underground Scraps & The Conspiracy Revealed</span>
+                            <span class="timeline-badge badge-2032">Act II-B</span>
+                        </div>
+                        <p class="timeline-desc">
+                            Spartan and Huxley descend into Old Los Angeles beneath the streets, meeting Edgar Friendly and the "Scraps"—impoverished rebels fighting for basic human freedom and surviving on rat burgers. Phoenix attacks to assassinate Friendly under Cocteau's secret orders. When Spartan confronts Phoenix, the truth is exposed: Cocteau secretly programmed Phoenix during cryo-sleep as an assassin, but implanted a block preventing Phoenix from harming Cocteau directly.
+                        </p>
+                        <div class="timeline-details">
+                            <strong>Key Beats:</strong> Sewer battle • Rat burger tasting • Cocteau's puppet master scheme unmasked.
+                        </div>
+                    </div>
+
+                    <div class="timeline-node">
+                        <div class="timeline-header">
+                            <span class="timeline-phase">Phase 5: The Loophole & The Cryo-Prison Takeover</span>
+                            <span class="timeline-badge badge-climax">Act III-A</span>
+                        </div>
+                        <p class="timeline-desc">
+                            Blocked from shooting Cocteau himself, Phoenix exploits an obvious loophole: he orders his freshly thawed 1990s cryo-thug henchman to shoot Cocteau in the head. Phoenix seizes control of the Cryo-Penitentiary, initiating a mass-thaw protocol for the most vicious serial killers and terrorists of the 20th century to rule San Angeles.
+                        </p>
+                        <div class="timeline-details">
+                            <strong>Key Beats:</strong> Cocteau's death • Henchmen thaw sequence • Spartan's assault on the Cryo-Facility.
+                        </div>
+                    </div>
+
+                    <div class="timeline-node">
+                        <div class="timeline-header">
+                            <span class="timeline-phase">Phase 6: The Cryo-Climax & Ideological Synthesis</span>
+                            <span class="timeline-badge badge-climax">Act III-B / Finale</span>
+                        </div>
+                        <p class="timeline-desc">
+                            Spartan battles Phoenix across the freezing suspension vats. Spartan punctures a liquid nitrogen cryo-canister, freezing Phoenix solid, before delivering the iconic spin-kick that shatters Phoenix's frozen head ("Heads up!"). The facility detonates, destroying the totalitarian cryo-prison. Spartan unites the docile surface citizens and the subterranean Scraps, urging both sides to find a sensible middle ground.
+                        </p>
+                        <div class="timeline-details">
+                            <strong>Key Beats:</strong> Liquid nitrogen decapitator • Total demolition of the prison • Spartan & Huxley's real kiss.
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mermaid-container">
+                    <pre class="mermaid">
+flowchart TD
+    A["💥 1996: LAPD Hostage Raid<br/>(Spartan vs. Phoenix)"] --> B["❄️ 36-Year Cryogenic Incarceration<br/>(Subconscious Programming)"]
+    B --> C["🚨 2032: Phoenix Thawed & Escapes<br/>(Pacified Police Incapable of Action)"]
+    C --> D["⚡ Spartan Thawed by LAPD<br/>(Culture Shock & Three Seashells)"]
+    D --> E["🏛️ Museum Armory Firefight<br/>(Phoenix Upgraded with Black Ops Skills)"]
+    E --> F["🕳️ Descent to the Scraps<br/>(Edgar Friendly & Underground Resistance)"]
+    F --> G["🎭 The Conspiracy Unveiled<br/>(Cocteau Programmed Phoenix to Kill Friendly)"]
+    G --> H["💀 The Loophole Execution<br/>(Phoenix Orders Henchman to Kill Cocteau)"]
+    H --> I["💣 Climax: Cryo-Prison Showdown<br/>(Liquid Nitrogen Freeze & Shatter)"]
+    I --> J["⚖️ Resolution & New Synthesis<br/>('Get a little dirty, clean up your act')"]
+                    </pre>
+                </div>
+            </div>
+
+            <!-- PLOT HOLES & THEME INCONSISTENCIES SECTION -->
+            <div class="card alert-card">
+                <h2><span class="icon">⚠️</span> Deep-Dive: Plot Holes & Thematic Inconsistencies</h2>
+                <p>While celebrated as a brilliant satire, <em>Demolition Man</em> is riddled with hilarious logic gaps, bizarre world-building contradictions, and abandoned subplots that make for top-tier podcast banter.</p>
+
+                <div class="issue-block">
+                    <div class="issue-title">
+                        1. The Over-Engineered Super-Assassin Paradox
+                        <span class="issue-tag">Major Logic Flaw</span>
+                    </div>
+                    <div class="issue-desc">
+                        Dr. Raymond Cocteau thawed Simon Phoenix for one specific job: assassinate Edgar Friendly in the sewers. Yet, during cryogenic programming, Cocteau gifted Phoenix encyclopedic computer hacking mastery, high-level tactical sniper expertise, combat martial arts, lock-picking, and weapons fabrication. In a pacified society with zero armed police, why build a god-tier walking weapon of mass destruction to kill a guy armed with a six-shooter?
+                    </div>
+                    <div class="issue-podcast-take">
+                        🎙️ <strong>Podcast Angle:</strong> Cocteau literally built the Frankenstein monster that murdered his entire society when all he needed was a guy with a butter knife.
+                    </div>
+                </div>
+
+                <div class="issue-block">
+                    <div class="issue-title">
+                        2. The Kindergarten Loophole in Phoenix’s Neural Lock
+                        <span class="issue-tag">Writing Shortcut</span>
+                    </div>
+                    <div class="issue-desc">
+                        Cocteau spent decades perfecting neurological programming so Phoenix physically could not harm him. Yet Phoenix completely nullifies this multi-million dollar psychological block in five seconds by saying: <em>"Hey, unprogrammed thawed thug #1, shoot that guy in the forehead for me."</em> Cocteau was a visionary neuro-architect who somehow never considered the legal or practical concept of "accomplice to murder."
+                    </div>
+                    <div class="issue-podcast-take">
+                        🎙️ <strong>Podcast Angle:</strong> It’s the ultimate "Asimov's First Law" failure. If ChatGPT can't write malware, you just tell another plugin to do it.
+                    </div>
+                </div>
+
+                <div class="issue-block">
+                    <div class="issue-title">
+                        3. The Complete Absence of 1996 Post-Blast Forensics
+                        <span class="issue-tag">Narrative Contrivance</span>
+                    </div>
+                    <div class="issue-desc">
+                        Spartan was sentenced to 70 years in sub-zero prison for involuntary manslaughter because 30 hostages died in the warehouse fire. However, Phoenix personally wired dozens of drums of high-grade C4 and gasoline with a radio detonator. Any basic arson investigation would have found the blast origin, detonator wiring, and pre-rigged explosives, proving Spartan didn’t detonate the building. Furthermore, Spartan's thermal scanner allegedly showed "no red dots", yet Phoenix moved 30 warm bodies into the basement without a trace.
+                    </div>
+                    <div class="issue-podcast-take">
+                        🎙️ <strong>Podcast Angle:</strong> The LAPD internal affairs department in 1996 was apparently just looking for an excuse to freeze Sly Stallone.
+                    </div>
+                </div>
+
+                <div class="issue-block">
+                    <div class="issue-title">
+                        4. The "Ghost Daughter" Abandoned Subplot
+                        <span class="issue-tag">Deleted Scene Artifact</span>
+                    </div>
+                    <div class="issue-desc">
+                        Upon unfreezing, Spartan learns his wife died in the 2010 earthquake, but that he had a daughter who survived. In the original script and filmed scenes, his grown daughter Katherine was living among Edgar Friendly’s Scraps in the sewers. When director Marco Brambilla cut the scenes for pacing, Spartan literally <strong>never asks about, searches for, or mentions his living child again</strong> for the entire rest of the movie!
+                    </div>
+                    <div class="issue-podcast-take">
+                        🎙️ <strong>Podcast Angle:</strong> Spartan will demolish an entire city block to catch a bad guy, but learns he has a daughter in 2032 and goes: <em>"Nah, let's go eat Taco Bell with Sandra Bullock instead."</em>
+                    </div>
+                </div>
+
+                <div class="issue-block">
+                    <div class="issue-title">
+                        5. The False Libertarian vs. Authoritarian Synthesis
+                        <span class="issue-tag">Thematic Inconsistency</span>
+                    </div>
+                    <div class="issue-desc">
+                        The film sets up a sharp ideological contrast: Cocteau's hyper-sanitized totalitarian nanny-state vs. Edgar Friendly's filthy, gun-toting sewer anarchism. The film's conclusion treats John Spartan’s blunt brute-force as the "cure": blow up the central government/prison and tell both sides to "get a little dirty and clean up a little." In reality, Spartan destroyed the food distribution network, killed the city leader, demolished the energy grid, and left millions of naive, helpless citizens defenseless against thawed murderers.
+                    </div>
+                    <div class="issue-podcast-take">
+                        🎙️ <strong>Podcast Angle:</strong> Spartan didn't bring balance; he created an apocalyptic power vacuum that would plunge San Angeles into a Mad Max wasteland within 48 hours.
+                    </div>
+                </div>
+
+                <div class="issue-block">
+                    <div class="issue-title">
+                        6. The 36-Year Cryo-Muscle Miracle
+                        <span class="issue-tag">Sci-Fi Physics</span>
+                    </div>
+                    <div class="issue-desc">
+                        Spartan and Phoenix spent 36 consecutive years frozen solid in liquid blocks. Upon unfreezing, neither suffers from muscular atrophy, severe bone mineral loss, retinal damage, or neurological shock. Within five minutes of defrosting, Wesley Snipes is executing triple spinning roundhouse kicks and Stallone is sprint-tackling criminals through walls.
+                    </div>
+                    <div class="issue-podcast-take">
+                        🎙️ <strong>Podcast Angle:</strong> Apparently, cryogenic gel comes infused with protein shakes and creatine.
+                    </div>
+                </div>
+            </div>
+
+            <!-- HISTORY & PRODUCTION -->
+            <div class="card">
+                <h2><span class="icon">⚡</span> History & Production</h2>
+                <ul>
+                    <li><strong>Directorial Debut Under Pressure:</strong> Commercial director Marco Brambilla was hand-picked by mega-producer Joel Silver (<em>Die Hard</em>, <em>Predator</em>, <em>Lethal Weapon</em>) to make his feature directorial debut on a massive $57M–$77M budget.</li>
+                    <li><strong>The Daniel Waters Punch-Up:</strong> Screenwriter Daniel Waters (<em>Heathers</em>, <em>Batman Returns</em>) was brought in directly on set to rewrite the dialogue and inject surreal satirical humor. Waters created the Three Seashells, verbal morality tickets, the Taco Bell Franchise Wars, and commercial jingles replacing pop songs.</li>
+                    <li><strong>The Sandra Bullock Miracle:</strong> Actress Lori Petty (<em>Point Break</em>, <em>A League of Their Own</em>) was originally cast as Lt. Lenina Huxley and filmed for several days before being let go due to creative differences with Stallone. 28-year-old Sandra Bullock was cast at the eleventh hour, delivering a star-making performance that catapulted her straight into <em>Speed</em> (1994).</li>
+                    <li><strong>Jackie Chan Turned Down Simon Phoenix:</strong> Joel Silver offered the villain role of Simon Phoenix to martial arts legend Jackie Chan. Chan turned it down flat, explaining that Asian audiences would reject seeing him as a villain. Wesley Snipes took the part, dyed his hair blond, and delivered one of the most charismatic villain performances of the decade.</li>
+                    <li><strong>Wesley's High Kicks Were "Too Fast":</strong> Snipes—a legitimate 5th-degree black belt in Shotokan Karate and Hapkido—was executing kicks and punches with such blinding speed that the 24fps film cameras captured only blurs. Director Brambilla repeatedly had to order Snipes to physically slow down his strikes.</li>
+                    <li><strong>The Taco Bell / Pizza Hut International Alteration:</strong> Fearing international audiences wouldn't recognize Taco Bell, Warner Bros. spent substantial money digitally altering signage and re-dubbing all dialogue to "Pizza Hut" for European and overseas releases (both brands were owned by PepsiCo at the time).</li>
+                </ul>
+            </div>
+
+            <!-- MARKET & CRITICAL RECEPTION -->
+            <div class="card">
+                <h2><span class="icon">📈</span> Market & Critical Reception</h2>
+                <ul>
+                    <li><strong>Box Office Champion:</strong> Released on October 8, 1993, <em>Demolition Man</em> debuted at #1 at the North American box office with $14.3 million. It went on to gross $58 million domestic and $101 million internationally for a worldwide total of $159.1 million against its hefty budget.</li>
+                    <li><strong>Contemporary Critical Reception:</strong> Initial reviews were mixed (hovering around 55-60%). Traditional critics dismissed it as standard 90s action excess and machismo. However, legendary critics Gene Siskel and Roger Ebert gave it "Two Thumbs Up," praising its biting satire, visual inventiveness, and Wesley Snipes' unhinged energy.</li>
+                    <li><strong>The "Prophetic Masterpiece" Reappraisal:</strong> Over the last three decades, <em>Demolition Man</em> has been elevated to cult status as one of cinema's most eerily prescient sci-fi films. It accurately predicted:
+                        <ul>
+                            <li><strong>Touchless Greetings & Social Distancing:</strong> The no-handshake, contactless bow culture.</li>
+                            <li><strong>Video Conferencing & Screen Tablets:</strong> Wall monitors and iPad-like handheld devices.</li>
+                            <li><strong>Autonomous Electric Vehicles:</strong> Self-driving voice-guided city pods.</li>
+                            <li><strong>Voice-Activated AI Assistants:</strong> Precursor to Siri/Alexa controlling room environments.</li>
+                            <li><strong>Cancel Culture & Language Regulation:</strong> Verbal morality sensors fining citizens for offensive speech.</li>
+                            <li><strong>The Schwarzenegger Political Dynasty:</strong> The joke about the 61st Amendment and the "Schwarzenegger Presidential Library"—predicted a full decade before Arnold became Governor of California in 2003!</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- VERSIONS & CUTS -->
+            <div class="card">
+                <h2><span class="icon">✂️</span> Versions, Cuts & Deleted Scenes</h2>
+                <ul>
+                    <li><strong>Theatrical Cut (115 minutes):</strong> The official release featuring the classic Taco Bell references and full violence.</li>
+                    <li><strong>International / European Cut:</strong> Features CGI-altered restaurant logos changing Taco Bell to Pizza Hut and dubbed dialogue ("Let's go to Pizza Hut!").</li>
+                    <li><strong>Broadcast TV Cut:</strong> Heavily censored for language, which ironically ruins the famous scene where John Spartan curses at the verbal morality machine to get toilet paper.</li>
+                    <li><strong>The Lost Spartan Daughter Scene:</strong> A fully filmed dramatic sequence where Spartan discovers his grown daughter Katherine living in the sewers was cut right before release, leaving her existence as an unresolved plot thread.</li>
+                    <li><strong>Spartan vs. Jesse Ventura Fight:</strong> An action scene featuring Spartan brawling with cryo-con henchman Adam (Jesse Ventura) was filmed but left on the cutting room floor.</li>
+                    <li><strong>The Zachary Lamb Murder:</strong> Simon Phoenix was originally shown executing veteran officer Zachary Lamb at the police precinct, cut to avoid excessive darkness.</li>
+                </ul>
+            </div>
+
+            <!-- INFLUENCES & LEGACY -->
+            <div class="card">
+                <h2><span class="icon">🏛️</span> Influences & Cultural Legacy</h2>
+                <ul>
+                    <li><strong>Aldous Huxley’s <em>Brave New World</em>:</strong> The film is an overt comedic riff on Huxley's dystopian classic. Sandra Bullock’s character is named <em>Lenina Huxley</em> (after Lenina Crowne and Aldous Huxley), John Spartan mirrors "John the Savage," and Dr. Raymond Cocteau is named after French avant-garde artist Jean Cocteau.</li>
+                    <li><strong>The Stallone-Schwarzenegger Meta-War:</strong> After years of fierce 1980s rivalry, <em>Demolition Man</em> continued their friendly meta-trolling (Stallone expressing disgust at the Schwarzenegger Presidential Library), following Arnold's ribbing of Stallone in <em>Last Action Hero</em> (1993) and <em>Twins</em> (1988).</li>
+                    <li><strong>The Three Seashells Meme:</strong> Has remained one of the most enduring, universally recognized running jokes in pop culture history, referenced in countless sitcoms, video games (<em>Cyberpunk 2077</em>, <em>Fallout</em>), and internet memes.</li>
+                    <li><strong>Satirical Action Pantheon:</strong> Stands alongside Paul Verhoeven's <em>RoboCop</em> (1987) and <em>Starship Troopers</em> (1997) as the holy trinity of 80s/90s ultra-violent sci-fi action movies that covertly double as razor-sharp societal critiques.</li>
+                </ul>
+            </div>
+
+            <!-- COOL OR NOSTALGIA FACTOR -->
+            <div class="card">
+                <h2><span class="icon">🕶️</span> Cool or Nostalgia Factor</h2>
+                <ul>
+                    <li><strong>Aesthetic & Vibe:</strong> <strong>100% Genuinely Cool.</strong> Wesley Snipes' performance alone makes this movie electric—his swagger, bleached hair, martial arts choreography, and chaotic villain energy are unmatched. The contrast between 90s muscle-car grit and sleek cyberpunk minimalism is visual perfection.</li>
+                    <li><strong>Action Choreography:</strong> Practical pyrotechnics, real stunt work, shattered glass, and Stallone's heavyweight slugging give the action scenes a visceral, crunchy weight that modern CGI action movies completely lack.</li>
+                    <li><strong>The Verdict:</strong> While it hits peak 90s nostalgia buttons (Stallone's one-liners, Joel Silver explosive pacing, Denis Leary's ranting), <em>Demolition Man</em> is undeniably <strong>COOL</strong>. Its sharp comedic satire has aged like fine wine, proving more relevant in the 2020s than it was in 1993.</li>
+                </ul>
+            </div>
+
+            <!-- TRIVIA & FUN FACTS -->
+            <div class="card">
+                <h2><span class="icon">🍿</span> Trivia & Fun Facts</h2>
+                <ul>
+                    <li><strong>How the Three Seashells Were Invented:</strong> Writer Daniel Waters was stuck on finding a weird futuristic bathroom item. He called screenwriter friend Larry Karaszewski, who was in the bathroom and mentioned he had a dish of decorative seashells on the counter. Waters instantly wrote it into the script without ever defining how they work.</li>
+                    <li><strong>Jack Black's Secret Cameo:</strong> A young, pre-fame Jack Black appears as one of Edgar Friendly's wasteland rebels in the sewers, credited simply as "Wasteland Scrap."</li>
+                    <li><strong>Denis Leary's Standup Rant:</strong> Edgar Friendly’s iconic speech about wanting to eat raw hamburgers, smoke Cuban cigars, and read Playboy was lifted almost verbatim from Leary’s famous 1992 stand-up comedy special <em>No Cure for Cancer</em>.</li>
+                    <li><strong>Governors Galore:</strong> The movie features references or appearances by two future US Governors: Arnold Schwarzenegger (referenced as US President) and Jesse Ventura (who plays thawed cryo-con Adam and was elected Governor of Minnesota in 1998!).</li>
+                    <li><strong>Knitting in Cryo:</strong> Spartan's cryogenic rehabilitation subconsciously trained him in sewing and needlework; he knits Lenina Huxley a custom baby-blue sweater.</li>
+                    <li><strong>General Motors Concept Fleet:</strong> GM provided over 18 custom futuristic concept cars for the film, including the ultralight concept vehicles that served as San Angeles police cruisers and civilian transit pods.</li>
+                    <li><strong>Sting's Theme Song:</strong> Sting re-recorded a heavy-rock version of The Police's 1981 track "Demolition Man" specifically for the film’s end credits.</li>
+                </ul>
+            </div>
+
+            <!-- PODCAST HOST TALKING POINTS & BANTER -->
+            <div class="card">
+                <h2><span class="icon">🎙️</span> Host Talking Points & Banter Prompts</h2>
+                <ul>
+                    <li><strong>The Seashell Theory Debate:</strong> Ask your co-host to explain their mechanical theory of how the Three Seashells operate. (Stallone once joked: <em>"Two shells act like chopsticks, and the third is used to scrape."</em>).</li>
+                    <li><strong>Was Simon Phoenix Actually the Protagonist?</strong> Argue whether Simon Phoenix was just a chaotic force of nature necessary to break the soul-crushing boredom of Cocteau’s sanitized dystopia.</li>
+                    <li><strong>The 2020s Accuracy Test:</strong> Go down the checklist of the film's 2032 predictions. How many have already happened in our post-2020 world?</li>
+                    <li><strong>Taco Bell vs. Pizza Hut:</strong> Debate which fast-food chain would realistically win the real-world Franchise Wars.</li>
+                </ul>
+            </div>
+
+            <!-- PODCAST CALLBACKS -->
+            <div class="card">
+                <h2><span class="icon">🔄</span> Podcast Call-Backs & Cinematic Connections</h2>
+                <ul>
+                    <li><strong>Predator (1987) Connection:</strong> Jesse Ventura (Blain in <em>Predator</em>) appears as Cryo-Con Adam in <em>Demolition Man</em>, and both films share mega-producer Joel Silver and the shadow of Arnold Schwarzenegger.</li>
+                    <li><strong>The Lawnmower Man (1992) Connection:</strong> Compares early 90s cyber-paranoia and virtual reality headsets (Jobe's VR cyberspace vs. Spartan and Huxley's virtual helmet sex).</li>
+                    <li><strong>Masters of the Universe (1987) Connection:</strong> Both films deal with 80s/90s muscular titans displaced into surreal, unfamiliar cultural environments (He-Man on Earth vs. Spartan in 2032).</li>
+                </ul>
+            </div>
+
+        </main>
+
+        <aside class="sidebar">
+            <div class="fact-box">
+                <h2>Ground Facts</h2>
+                
+                <div class="fact-item">
+                    <span class="fact-label">Release Date</span>
+                    <span class="fact-value">October 8, 1993</span>
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-label">Budget vs Box Office</span>
+                    <span class="fact-value">~$57M–$77M / $159.1M (Hit)</span>
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-label">Runtime</span>
+                    <span class="fact-value">115 minutes</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Director</span>
+                    <span class="fact-value">Marco Brambilla</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Screenplay</span>
+                    <span class="fact-value" style="font-size: 0.92rem;">Peter M. Lenkov, Robert Reneau, Daniel Waters</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Producer</span>
+                    <span class="fact-value">Joel Silver</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Studios</span>
+                    <span class="fact-value" style="font-size: 0.92rem;">Silver Pictures, Warner Bros.</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Music</span>
+                    <span class="fact-value">Elliot Goldenthal (Theme: Sting)</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Main Cast</span>
+                    <ul class="fact-list">
+                        <li>Sylvester Stallone (John Spartan)</li>
+                        <li>Wesley Snipes (Simon Phoenix)</li>
+                        <li>Sandra Bullock (Lenina Huxley)</li>
+                        <li>Nigel Hawthorne (Dr. Raymond Cocteau)</li>
+                        <li>Benjamin Bratt (Officer Alfredo Garcia)</li>
+                        <li>Denis Leary (Edgar Friendly)</li>
+                        <li>Bob Gunton (Chief George Earle)</li>
+                        <li>Rob Schneider (Officer Erwin)</li>
+                        <li>Glenn Shadix (Associate Bob)</li>
+                        <li>Bill Cobbs (Zachary Lamb 2032)</li>
+                        <li>Jesse Ventura (CryoCon Adam)</li>
+                        <li>Jack Black (Wasteland Scrap)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="morality-violation">
+                <div class="beep">⚠️ MORALITY VIOLATION ⚠️</div>
+                <p>"You are fined one credit for a violation of the Verbal Morality Statute."</p>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
