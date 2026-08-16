@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 Monkeys (1995) - Cheat Sheet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true, theme:'dark', themeVariables:{primaryColor:'#1a112c', edgeColor:'#05d9e8', primaryBorderColor:'#ff2a6d', primaryTextColor:'#e2d9f3', background:'#0d0914'}});</script>
+    <style>
+        :root {
+            --bg-color: #0d0914;
+            --card-bg: #1a112c;
+            --card-inner: #120b20;
+            --text-primary: #e2d9f3;
+            --text-secondary: #a395be;
+            --accent-pink: #ff2a6d;
+            --accent-cyan: #05d9e8;
+            --accent-yellow: #f1c40f;
+            --accent-ice: #8be9fd;
+            --grid-color: rgba(5, 217, 232, 0.05);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-position: center center;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 2rem;
+        }
+
+        .nav-back {
+            grid-column: 1 / -1;
+            margin-bottom: -1rem;
+        }
+
+        .nav-back a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .nav-back a:hover {
+            color: var(--accent-pink);
+            transform: translateX(-4px);
+        }
+
+        header {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(255, 42, 109, 0.12), rgba(5, 217, 232, 0.12));
+            border-radius: 16px;
+            border: 1px solid rgba(255, 42, 109, 0.3);
+            box-shadow: 0 0 25px rgba(255, 42, 109, 0.2), inset 0 0 25px rgba(5, 217, 232, 0.1);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 15px rgba(255, 42, 109, 0.3);
+        }
+
+        .subtitle {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 0.8rem;
+        }
+
+        .tagline {
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
+            color: var(--accent-yellow);
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 14px;
+            padding: 2rem;
+            border-left: 4px solid var(--accent-cyan);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 22px rgba(5, 217, 232, 0.18);
+            border-left-color: var(--accent-pink);
+        }
+
+        .card.featured {
+            border-left-color: var(--accent-yellow);
+            background: linear-gradient(180deg, rgba(26, 17, 44, 0.95), rgba(18, 11, 32, 0.95));
+            border: 1px solid rgba(241, 196, 15, 0.3);
+            border-left: 5px solid var(--accent-yellow);
+        }
+
+        .card.alert-card {
+            border-left-color: var(--accent-pink);
+            background: linear-gradient(180deg, rgba(35, 15, 35, 0.9), rgba(20, 10, 25, 0.95));
+            border: 1px solid rgba(255, 42, 109, 0.3);
+            border-left: 5px solid var(--accent-pink);
+        }
+
+        .card h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent-pink);
+            margin-top: 0;
+            font-size: 1.8rem;
+            border-bottom: 1px solid rgba(255, 42, 109, 0.25);
+            padding-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card.featured h2 {
+            color: var(--accent-yellow);
+            border-bottom-color: rgba(241, 196, 15, 0.25);
+        }
+
+        .card.alert-card h2 {
+            color: var(--accent-pink);
+            border-bottom-color: rgba(255, 42, 109, 0.35);
+        }
+
+        .card h2 .icon {
+            font-size: 1.3rem;
+        }
+
+        .card h3 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent-cyan);
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card ul {
+            padding-left: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        .card li {
+            margin-bottom: 0.9rem;
+        }
+
+        .card strong {
+            color: var(--accent-cyan);
+        }
+
+        .card p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-visualizer {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            position: relative;
+        }
+
+        .timeline-node {
+            background: var(--card-inner);
+            border: 1px solid rgba(5, 217, 232, 0.2);
+            border-radius: 10px;
+            padding: 1.3rem 1.5rem;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .timeline-node:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 15px rgba(5, 217, 232, 0.2);
+            transform: translateX(4px);
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.6rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .timeline-phase {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+
+        .timeline-badge {
+            font-size: 0.75rem;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+
+        .badge-1996 {
+            background: rgba(255, 42, 109, 0.2);
+            color: var(--accent-pink);
+            border: 1px solid var(--accent-pink);
+        }
+
+        .badge-2032 {
+            background: rgba(5, 217, 232, 0.2);
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+        }
+
+        .badge-climax {
+            background: rgba(241, 196, 15, 0.2);
+            color: var(--accent-yellow);
+            border: 1px solid var(--accent-yellow);
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .timeline-details {
+            margin-top: 0.6rem;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+            padding-top: 0.5rem;
+        }
+
+        .mermaid-container {
+            background: #08050e;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(5, 217, 232, 0.2);
+            margin-top: 1.5rem;
+            overflow-x: auto;
+            text-align: center;
+        }
+
+        .issue-block {
+            background: rgba(20, 10, 25, 0.7);
+            border: 1px solid rgba(255, 42, 109, 0.25);
+            border-radius: 10px;
+            padding: 1.2rem 1.4rem;
+            margin-bottom: 1.2rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .issue-block:hover {
+            border-color: var(--accent-pink);
+        }
+
+        .issue-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent-pink);
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .issue-tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.15rem 0.5rem;
+            border-radius: 12px;
+            background: rgba(255, 42, 109, 0.2);
+            color: #ff7b9f;
+            border: 1px solid rgba(255, 42, 109, 0.4);
+        }
+
+        .issue-desc {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .issue-podcast-take {
+            font-size: 0.88rem;
+            color: var(--accent-yellow);
+            background: rgba(241, 196, 15, 0.08);
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--accent-yellow);
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 2rem;
+            height: max-content;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .fact-box {
+            background: linear-gradient(180deg, var(--card-bg), #110b1d);
+            border-radius: 14px;
+            padding: 2rem;
+            border: 1px solid rgba(5, 217, 232, 0.3);
+            box-shadow: 0 0 20px rgba(5, 217, 232, 0.12);
+        }
+
+        .fact-box h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent-yellow);
+            text-align: center;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(241, 196, 15, 0.25);
+            padding-bottom: 0.8rem;
+        }
+
+        .fact-item {
+            margin-bottom: 1.1rem;
+            padding-bottom: 1.1rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+
+        .fact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .fact-label {
+            display: block;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.3rem;
+        }
+
+        .fact-value {
+            display: block;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--text-primary);
+        }
+
+        .fact-list {
+            margin: 0;
+            padding-left: 1.2rem;
+            font-size: 0.92rem;
+        }
+
+        .fact-list li {
+            margin-bottom: 0.35rem;
+        }
+
+        .morality-violation {
+            background: rgba(255, 42, 109, 0.12);
+            border: 1px solid var(--accent-pink);
+            border-radius: 10px;
+            padding: 1.2rem;
+            text-align: center;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .morality-violation .beep {
+            color: var(--accent-pink);
+            font-weight: 800;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+        }
+
+        .morality-violation p {
+            margin: 0.5rem 0 0 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 950px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+            }
+            h1 {
+                font-size: 2.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="nav-back">
+            <a href="../index.html">← Back to Podcast Hub</a>
+        </div>
+
+        <header>
+            <h1>12 Monkeys</h1>
+            <div class="subtitle">1995 • Podcast Cheat Sheet</div>
+            <div class="tagline">"The future is history."</div>
+        </header>
+
+        <main class="main-content">
+
+            <!-- VISUAL STORY PROGRESSION SECTION -->
+            <div class="card featured">
+                <h2><span class="icon">🎬</span> Visual Story Progression: The Time Loop</h2>
+                <p>James Cole's tragic time-travel journey to prevent a global apocalypse.</p>
+                
+                <div class="timeline-visualizer">
+                    
+                    <div class="timeline-node">
+                        <div class="timeline-header">
+                            <span class="timeline-phase">Phase 1: 2035 Dystopia & The Mission</span>
+                            <span class="timeline-badge badge-1996">Prologue</span>
+                        </div>
+                        <p class="timeline-desc">
+                            James Cole is a "volunteer" prisoner in a grim, disease-free underground facility. He is sent to the surface to gather biological samples and is eventually selected for a time-travel mission to 1996 to locate the original virus source.
+                        </p>
+                    </div>
+
+                    <div class="timeline-node">
+                        <div class="timeline-header">
+                            <span class="timeline-phase">Phase 2: 1990 Asylum - Wrong Year</span>
+                            <span class="timeline-badge badge-2032">Act I</span>
+                        </div>
+                        <p class="timeline-desc">
+                            Due to a miscalculation, Cole arrives in 1990. He is institutionalized after ranting about a future plague. He meets psychiatrist Dr. Kathryn Railly and a manic, anti-consumerist patient named Jeffrey Goines. Cole escapes by suddenly "disappearing" back to the future.
+                        </p>
+                    </div>
+
+                    <div class="timeline-node">
+                        <div class="timeline-header">
+                            <span class="timeline-phase">Phase 3: 1996 - The Target Year</span>
+                            <span class="timeline-badge badge-2032">Act II-A</span>
+                        </div>
+                        <p class="timeline-desc">
+                            After a brief accidental stop in WWI trenches, Cole arrives in 1996. He kidnaps Dr. Railly and forces her to take him to Philadelphia to find the "Army of the 12 Monkeys," which he believes released the virus. They discover the group is led by Jeffrey Goines.
+                        </p>
+                    </div>
+
+                    <div class="timeline-node">
+                        <div class="timeline-header">
+                            <span class="timeline-phase">Phase 4: Sanity Shift & Cassandra Complex</span>
+                            <span class="timeline-badge badge-2032">Act II-B</span>
+                        </div>
+                        <p class="timeline-desc">
+                            The roles reverse. Cole, exhausted by the time jumps, convinces himself that he is completely insane and the 2035 future is a delusion. Conversely, Dr. Railly finds physical evidence (a WWI photo with Cole in it) and realizes his apocalyptic warnings are real.
+                        </p>
+                    </div>
+
+                    <div class="timeline-node">
+                        <div class="timeline-header">
+                            <span class="timeline-phase">Phase 5: The Red Herring & The True Threat</span>
+                            <span class="timeline-badge badge-climax">Act III-A</span>
+                        </div>
+                        <p class="timeline-desc">
+                            They discover the "Army of the 12 Monkeys" is just an animal rights group pulling a prank by releasing zoo animals into the city. The actual threat is Dr. Peters, a misanthropic assistant to Goines' virologist father, who intends to release a weaponized virus globally.
+                        </p>
+                    </div>
+
+                    <div class="timeline-node">
+                        <div class="timeline-header">
+                            <span class="timeline-phase">Phase 6: The Climax & Ending Analysis</span>
+                            <span class="timeline-badge badge-climax">Act III-B / Finale</span>
+                        </div>
+                        <p class="timeline-desc">
+                            At the airport, Cole tries to shoot Dr. Peters before he boards his flight but is gunned down by police. Dr. Railly holds the dying Cole, making eye contact with a young boy—Cole himself as a child, witnessing his own death, cementing the trauma that haunts his dreams.
+                        </p>
+                        <div class="timeline-details">
+                            <strong>Ending Analysis:</strong> Dr. Peters boards the plane and sits next to Jones, a prominent scientist from 2035, who introduces herself by saying, "I'm in insurance." This brilliant ending confirms the closed time loop: the future cannot be changed. The scientists didn't send Cole to save the past; they sent him to identify the virus so they could secure an unmutated sample on that very flight to synthesize a cure for the future survivors.
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mermaid-container">
+                    <pre class="mermaid">
+flowchart TD
+    A["💀 2035: Post-Apocalyptic Underground<br/>(Cole Selected for Time Travel)"] --> B["🏥 1990: Arrives in Wrong Year<br/>(Institutionalized, Meets Railly & Goines)"]
+    B --> C["🕰️ 1996: Arrival in Target Year<br/>(Kidnaps Railly, Hunts the 12 Monkeys)"]
+    C --> D["🧠 Sanity Shift & Doubt<br/>(Cole Thinks He's Insane, Railly Believes Him)"]
+    D --> E["🐒 The Red Herring<br/>(12 Monkeys Just Release Zoo Animals)"]
+    E --> F["🧬 The True Threat Discovered<br/>(Dr. Peters Has the Virus)"]
+    F --> G["✈️ Airport Climax<br/>(Cole Shot, Young Cole Watches)"]
+    G --> H["🔄 The Loop Closes / Analysis<br/>(Scientists Secure Sample on Plane)"]
+                    </pre>
+                </div>
+            </div>
+
+            <!-- PLOT HOLES & THEME INCONSISTENCIES SECTION -->
+            <div class="card alert-card">
+                <h2><span class="icon">⚠️</span> Deep-Dive: Plot Holes, Theme Inconsistencies & Hidden Messaging</h2>
+
+                <div class="issue-block">
+                    <div class="issue-title">
+                        1. The Predestination Paradox
+                        <span class="issue-tag">Thematic Feature</span>
+                    </div>
+                    <div class="issue-desc">
+                        A common criticism is asking why the scientists don't just kill Peters and stop the plague. It's a rigid closed-loop timeline. Everything Cole does to try and stop the plague actually sets the events in motion.
+                    </div>
+                    <div class="issue-podcast-take">
+                        🎙️ <strong>Podcast Angle:</strong> It's a tragedy of inevitability. The future cannot be rewritten.
+                    </div>
+                </div>
+
+                <div class="issue-block">
+                    <div class="issue-title">
+                        2. The Voice in Cole's Head
+                        <span class="issue-tag">Ambiguity</span>
+                    </div>
+                    <div class="issue-desc">
+                        Cole hears a raspy voice ("Bob") calling him throughout the movie. In 1996, a homeless man seems to be the source. Is it a symptom of his mental breakdown, or another time traveler whose mind broke from the jumps?
+                    </div>
+                    <div class="issue-podcast-take">
+                        🎙️ <strong>Podcast Angle:</strong> The film heavily leans into ambiguity. It forces the audience to constantly question if the sci-fi elements are real or the tragic delusions of a deeply traumatized mind.
+                    </div>
+                </div>
+
+                <div class="issue-block">
+                    <div class="issue-title">
+                        3. Hidden Messaging: Animal Liberation
+                        <span class="issue-tag">Subtext</span>
+                    </div>
+                    <div class="issue-desc">
+                        The Army of the 12 Monkeys is a misdirection, but their cause mirrors the virus's effect.
+                    </div>
+                    <div class="issue-podcast-take">
+                        🎙️ <strong>Podcast Angle:</strong> The film portrays humanity as the true "virus" destroying the planet. When the human plague hits, the animals reclaim the Earth—perfectly symbolized by the majestic lions roaming the snow-covered streets of Philadelphia.
+                    </div>
+                </div>
+
+                <div class="issue-block">
+                    <div class="issue-title">
+                        4. Hidden Messaging: The Cassandra Complex
+                        <span class="issue-tag">Symbolism</span>
+                    </div>
+                    <div class="issue-desc">
+                        Dr. Railly explicitly lectures on the "Cassandra Complex"—knowing the future but being doomed to not be believed.
+                    </div>
+                    <div class="issue-podcast-take">
+                        🎙️ <strong>Podcast Angle:</strong> The film is a masterclass in how society institutionalizes truth-tellers. Madness is depicted not as a sickness, but as the only sane reaction to a world heading toward self-destruction.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- HISTORY & PRODUCTION -->
+            <div class="card">
+                <h2><span class="icon">⚡</span> History & Production</h2>
+                <ul>
+                    <li><strong>Inspired by La Jetée:</strong> It's a feature-length adaptation of Chris Marker's legendary 1962 French short film La Jetée, which was composed almost entirely of still photographs and explored the same themes of memory, time loops, and witnessing one's own death.</li>
+                    <li><strong>Brad Pitt's Method Madness:</strong> Brad Pitt voluntarily spent weeks in the psychiatric ward of Temple University Hospital to prepare for his role as the unhinged Jeffrey Goines. His manic, twitchy performance won him a Golden Globe and his first Oscar nomination.</li>
+                    <li><strong>Bruce Willis's Paycut & Restrictions:</strong> Bruce Willis took a significant pay cut to work with Terry Gilliam. Gilliam literally handed Willis a list of "Bruce Willis Acting Clichés" (like his trademark smirking) that he was strictly banned from using on set.</li>
+                    <li><strong>The Steampunk Future:</strong> The production design deliberately avoided sleek, high-tech sci-fi aesthetics. The 2035 future is a claustrophobic, rusty, "cobbled together" nightmare to reflect humanity's regression into the sewers.</li>
+                </ul>
+            </div>
+
+            <!-- MARKET & CRITICAL RECEPTION -->
+            <div class="card">
+                <h2><span class="icon">📈</span> Market & Critical Reception</h2>
+                <ul>
+                    <li><strong>Box Office Success:</strong> Released in late 1995, it became a massive critical and commercial success, grossing $168.8 million against a modest $29.5 million budget.</li>
+                    <li><strong>Critical Acclaim:</strong> Critics praised its complex, labyrinthine narrative, its oppressive and brilliant atmosphere, and the career-defining performances from both Willis and Pitt. It is widely considered one of the greatest time-travel movies ever made.</li>
+                </ul>
+            </div>
+
+            <!-- PODCAST HOST TALKING POINTS & BANTER -->
+            <div class="card">
+                <h2><span class="icon">🎙️</span> Host Talking Points & Banter Prompts</h2>
+                <ul>
+                    <li><strong>The "It Was All a Dream" Theory:</strong> Debate whether Cole was just a schizophrenic patient the entire time, and the "future" and "virus" were all elaborate delusions woven from elements around him in 1990 (like the monkeys on TV, or the scientist in his asylum).</li>
+                    <li><strong>The Insurance Line:</strong> When the future scientist says "I'm in insurance," does she mean she's going to kill Peters and prevent the outbreak (breaking the film's own time travel rules), or just ensure they get the virus sample?</li>
+                    <li><strong>Brad Pitt's Hand Gestures:</strong> Challenge your co-host to replicate Jeffrey Goines' manic, erratic hand movements while discussing the plot.</li>
+                </ul>
+            </div>
+
+            <!-- PODCAST CALLBACKS -->
+            <div class="card">
+                <h2><span class="icon">🔄</span> Podcast Call-Backs & Cinematic Connections</h2>
+                <ul>
+                    <li><strong>Demolition Man (1993) Connection:</strong> Both feature a tough-guy action star (Willis/Stallone) displaced from their normal timeline into a bizarre, restrictive future/alternate timeline, struggling to adapt.</li>
+                    <li><strong>The Terminator (1984) Connection:</strong> Both deal with closed time loops where the attempt to alter the timeline ends up directly causing the events they were trying to prevent.</li>
+                </ul>
+            </div>
+
+        </main>
+
+        <aside class="sidebar">
+            <div class="fact-box">
+                <h2>Ground Facts</h2>
+                
+                <div class="fact-item">
+                    <span class="fact-label">Release Date</span>
+                    <span class="fact-value">Jan 5, 1996 (Wide)</span>
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-label">Budget vs Box Office</span>
+                    <span class="fact-value">~$29.5M / $168.8M (Hit)</span>
+                </div>
+                
+                <div class="fact-item">
+                    <span class="fact-label">Runtime</span>
+                    <span class="fact-value">129 minutes</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Director</span>
+                    <span class="fact-value">Terry Gilliam</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Screenplay</span>
+                    <span class="fact-value" style="font-size: 0.92rem;">David Peoples, Janet Peoples</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Producer</span>
+                    <span class="fact-value">Charles Roven</span>
+                </div>
+
+                <div class="fact-item">
+                    <span class="fact-label">Main Cast</span>
+                    <ul class="fact-list">
+                        <li>Bruce Willis (James Cole)</li>
+                        <li>Brad Pitt (Jeffrey Goines)</li>
+                        <li>Madeleine Stowe (Kathryn Railly)</li>
+                        <li>Christopher Plummer (Dr. Leland Goines)</li>
+                        <li>David Morse (Dr. Peters)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="morality-violation">
+                <div class="beep">⚠️ ANOMALY DETECTED ⚠️</div>
+                <p>"I'm in insurance."</p>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
