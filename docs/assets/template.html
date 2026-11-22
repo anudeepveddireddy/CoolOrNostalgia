@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{MOVIE_TITLE}} ({{YEAR}}) - Cool Or Nostalgia Cheat Sheet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/cheatsheet.css">
+    <!-- Optional: include Mermaid only when using a story flow diagram -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>
+    <script src="../assets/cheatsheet.js" defer></script>
+</head>
+<body>
+    <!-- Sticky iPad Chapter Jump Bar (matches the 6-chapter YouTube run-of-show) -->
+    <nav class="chapter-nav" aria-label="Episode chapters">
+        <div class="chapter-nav-inner">
+            <div class="chapter-links">
+                <a class="chapter-pill active" href="#intro">1. Intro</a>
+                <a class="chapter-pill pill-cool" href="#cool">3. COOL</a>
+                <a class="chapter-pill pill-nostalgia" href="#nostalgia">4. NOSTALGIA</a>
+                <a class="chapter-pill pill-pitch" href="#sequels">5. Sequel / Remake</a>
+                <a class="chapter-pill" href="#clips">Clips &amp; Trivia</a>
+                <a class="chapter-pill" href="#verdict">6. Verdict</a>
+            </div>
+            <div class="nav-controls" aria-label="Text size controls">
+                <button id="font-dec" class="font-btn" type="button" title="Smaller text">A-</button>
+                <button id="font-inc" class="font-btn" type="button" title="Larger text">A+</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="nav-back">
+            <a href="../index.html">&larr; Back to Podcast Hub</a>
+        </div>
+
+        <header>
+            <h1>{{MOVIE_TITLE}}</h1>
+            <div class="subtitle">Cool Or Nostalgia &bull; {{YEAR}}</div>
+            <div class="tagline">&ldquo;{{TAGLINE}}&rdquo;</div>
+        </header>
+
+        <main class="main-content">
+            <!-- CHAPTER 1 & 2: INTRO + WHO'S SEEN IT BEFORE -->
+            <section id="intro" class="card">
+                <h2><span>🎬 30-Second Intro Synopsis</span><span class="chapter-badge">Ch. 1–2 &bull; Intro</span></h2>
+                <div class="synopsis-box">
+                    {{SHORT_SYNOPSIS}}
+                </div>
+                <details class="flow-toggle">
+                    <summary>Plot Beat Flow Diagram (tap to expand)</summary>
+                    <div class="mermaid-container">
+                        <div class="mermaid">
+flowchart LR
+    A["Act I: Setup"] --> B["Act II: Escalation"] --> C["Act III: Climax"]
+                        </div>
+                    </div>
+                </details>
+            </section>
+
+            <!-- CHAPTER 3: WHAT WAS COOL? -->
+            <section id="cool" class="card cool-card">
+                <h2><span>❄️ The Case for COOL</span><span class="chapter-badge">Ch. 3 &bull; Holds Up</span></h2>
+                <ul>
+                    <li><strong>Craft &amp; Aesthetics:</strong> {{COOL_POINT_1}}</li>
+                    <li><strong>Performances &amp; Direction:</strong> {{COOL_POINT_2}}</li>
+                    <li><strong>Themes &amp; Legacy:</strong> {{COOL_POINT_3}}</li>
+                </ul>
+            </section>
+
+            <!-- CHAPTER 4: WHAT WAS NOSTALGIA? -->
+            <section id="nostalgia" class="card nostalgia-card">
+                <h2><span>📼 The Case for NOSTALGIA &amp; Plot Holes</span><span class="chapter-badge">Ch. 4 &bull; Dated / Nitpicks</span></h2>
+                <ul>
+                    <li><strong>What Aged Poorly:</strong> {{DATED_POINT_1}}</li>
+                    <li><strong>Campy / Era-Locked Moments:</strong> {{DATED_POINT_2}}</li>
+                </ul>
+
+                <h3>Plot Holes &amp; Logic Debates</h3>
+                <div class="issue-block">
+                    <div class="issue-title">{{PLOT_HOLE_TITLE}} <span class="issue-tag">{{PLOT_HOLE_TAG}}</span></div>
+                    <div class="issue-desc">{{PLOT_HOLE_DESC}}</div>
+                    <div class="issue-podcast-take">🎙️ <strong>Podcast Angle:</strong> {{PLOT_HOLE_ANGLE}}</div>
+                </div>
+            </section>
+
+            <!-- CHAPTER 5: SEQUEL / REMAKE IDEAS -->
+            <section id="sequels" class="card pitch-card">
+                <h2><span>🚀 Sequel / Remake Pitch Fuel</span><span class="chapter-badge">Ch. 5 &bull; Pitches</span></h2>
+                <p><strong>Franchise Status:</strong> {{FRANCHISE_HISTORY}}</p>
+                <div class="pitch-block">
+                    <div class="pitch-title">Pitch 1: {{PITCH_1_TITLE}}</div>
+                    <p>{{PITCH_1_DESC}}</p>
+                </div>
+                <div class="pitch-block">
+                    <div class="pitch-title">Pitch 2: {{PITCH_2_TITLE}}</div>
+                    <p>{{PITCH_2_DESC}}</p>
+                </div>
+            </section>
+
+            <!-- CON-MEN CLIPS & QUICK TRIVIA -->
+            <section id="clips" class="card clip-card">
+                <h2><span>✂️ Clip-Worthy Debate Hooks</span><span class="chapter-badge">CON-MEN CLIPS (4–6 min)</span></h2>
+                <div class="clip-hook">
+                    <div class="clip-question">{{CLIP_QUESTION_1}}</div>
+                    <p>{{CLIP_SETUP_1}}</p>
+                </div>
+                <div class="clip-hook">
+                    <div class="clip-question">{{CLIP_QUESTION_2}}</div>
+                    <p>{{CLIP_SETUP_2}}</p>
+                </div>
+            </section>
+
+            <section id="trivia" class="card">
+                <h2><span>🍿 Rapid-Fire Trivia &amp; Call-Backs</span><span class="chapter-badge">Banter Fuel</span></h2>
+                <ul>
+                    <li><strong>Production Story:</strong> {{TRIVIA_1}}</li>
+                    <li><strong>Casting / Behind-the-Scenes:</strong> {{TRIVIA_2}}</li>
+                    <li><strong>Versions / Cuts:</strong> {{VERSIONS_NOTE}}</li>
+                </ul>
+
+                <h3>🔄 Past-Episode Call-Backs</h3>
+                <ul>
+                    <li><strong>{{PAST_MOVIE}}:</strong> {{CALLBACK_CONNECTION}}</li>
+                </ul>
+            </section>
+
+            <!-- CHAPTER 6: COOL VS. NOSTALGIA RESULTS -->
+            <section id="verdict" class="card featured">
+                <h2><span>⚖️ Verdict Prep &amp; Contrarian Take</span><span class="chapter-badge">Ch. 6 &bull; Final Vote</span></h2>
+                <ul>
+                    <li><strong>Consensus Lean:</strong> {{CONSENSUS_LEAN}}</li>
+                    <li><strong>Contrarian Devil&rsquo;s Advocate:</strong> {{CONTRARIAN_TAKE}}</li>
+                </ul>
+            </section>
+        </main>
+
+        <!-- STICKY GROUND FACTS SIDEBAR -->
+        <aside class="sidebar">
+            <div class="fact-box">
+                <h2>⚡ Ground Facts</h2>
+                <div class="fact-item">
+                    <span class="fact-label">Release Date</span>
+                    <span class="fact-value">{{RELEASE_DATE}}</span>
+                </div>
+                <div class="fact-item">
+                    <span class="fact-label">Budget / Box Office</span>
+                    <span class="fact-value">{{BUDGET}} &rarr; {{BOX_OFFICE}}</span>
+                </div>
+                <div class="fact-item">
+                    <span class="fact-label">Rotten Tomatoes</span>
+                    <div class="score-row">
+                        <div class="score-pill">Critics<strong>{{RT_CRITICS}}</strong></div>
+                        <div class="score-pill">Audience<strong>{{RT_AUDIENCE}}</strong></div>
+                    </div>
+                </div>
+                <div class="fact-item">
+                    <span class="fact-label">Runtime</span>
+                    <span class="fact-value">{{RUNTIME}}</span>
+                </div>
+                <div class="fact-item">
+                    <span class="fact-label">Director &amp; Writers</span>
+                    <span class="fact-value">{{CREW}}</span>
+                </div>
+                <div class="fact-item">
+                    <span class="fact-label">Main Cast</span>
+                    <ul class="fact-list">
+                        <li>{{CAST_1}}</li>
+                        <li>{{CAST_2}}</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
