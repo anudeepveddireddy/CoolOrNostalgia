@@ -3,207 +3,341 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoolOrNostalgia - Cheat Sheets</title>
+    <title>Cool Or Nostalgia — Show Notes Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/cheatsheet.css">
     <style>
-        :root {
-            --bg-color: #0d0914;
-            --card-bg: #1a112c;
-            --text-primary: #e2d9f3;
-            --text-secondary: #a395be;
-            --accent-pink: #ff2a6d;
-            --accent-cyan: #05d9e8;
-            --accent-yellow: #f1c40f;
-            --grid-color: rgba(5, 217, 232, 0.05);
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            background-image: 
-                linear-gradient(var(--grid-color) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-            background-size: 30px 30px;
-            background-position: center center;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .container {
-            max-width: 900px;
+        .hub-shell {
+            max-width: 920px;
             margin: 0 auto;
-            padding: 4rem 2rem;
-            flex: 1;
-            width: 100%;
-            box-sizing: border-box;
+            padding: 2.5rem 1.5rem 5rem;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 4rem;
+        .hub-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1.25rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-strong);
+            margin-bottom: 1.5rem;
         }
 
-        h1 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 4rem;
-            font-weight: 800;
+        .hub-top h1 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            margin-bottom: 0.35rem;
+        }
+
+        .hub-lead {
+            color: var(--ink-muted);
+            font-size: 1rem;
             margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            background: linear-gradient(to right, var(--accent-cyan), var(--accent-pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0px 0px 15px rgba(255, 42, 109, 0.3);
         }
 
-        .subtitle {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.5rem;
-            color: var(--accent-yellow);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-top: 1rem;
+        .hub-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .hub-search-wrap {
+            position: relative;
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .hub-search-icon {
+            position: absolute;
+            left: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 17px;
+            height: 17px;
+            color: var(--ink-muted);
+            pointer-events: none;
+        }
+
+        .hub-search {
+            width: 100%;
+            height: 44px;
+            padding: 0 1rem 0 2.5rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--ink);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            transition: border-color 0.15s ease, background-color 0.15s ease;
+        }
+
+        .hub-search::placeholder {
+            color: var(--ink-muted);
+        }
+
+        .hub-search:focus {
+            outline: none;
+            border-color: var(--accent-cool);
+        }
+
+        .hub-count {
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            font-variant-numeric: tabular-nums;
+            color: var(--ink-muted);
+            white-space: nowrap;
         }
 
         .movie-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid var(--border);
         }
 
         .movie-card {
-            background: linear-gradient(180deg, var(--card-bg), #110b1d);
-            border-radius: 12px;
-            padding: 2rem;
-            border: 1px solid rgba(5, 217, 232, 0.3);
-            box-shadow: 0 0 15px rgba(5, 217, 232, 0.1);
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 64px minmax(0, 1fr) auto;
             align-items: center;
-            text-align: center;
+            gap: 1rem;
+            padding: 1.05rem 0.9rem;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--ink);
+            border-radius: var(--radius-sm);
+            transition: background-color 0.15s ease;
         }
 
         .movie-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 42, 109, 0.2);
-            border-color: var(--accent-pink);
-        }
-
-        .movie-card h2 {
-            font-family: 'Outfit', sans-serif;
-            color: var(--accent-cyan);
-            margin: 0 0 0.5rem 0;
-            font-size: 1.8rem;
-            transition: color 0.3s ease;
-        }
-        
-        .movie-card:hover h2 {
-            color: var(--accent-pink);
+            background: var(--surface);
         }
 
         .movie-year {
-            font-size: 1rem;
-            color: var(--text-secondary);
+            font-family: var(--font-mono);
+            font-size: 0.92rem;
             font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
+            font-variant-numeric: tabular-nums;
+            color: var(--ink-muted);
         }
-        
-        .view-button {
-            margin-top: auto;
-            background: transparent;
-            border: 1px solid var(--accent-cyan);
-            color: var(--accent-cyan);
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
+
+        .movie-info {
+            min-width: 0;
         }
-        
-        .movie-card:hover .view-button {
-            background: var(--accent-pink);
-            border-color: var(--accent-pink);
-            color: white;
-            box-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
+
+        .movie-card h2 {
+            font-family: var(--font-display);
+            font-size: 1.24rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--ink);
+            line-height: 1.25;
+        }
+
+        .movie-card:hover h2 {
+            color: var(--accent-cool);
+        }
+
+        .movie-meta {
+            font-size: 0.88rem;
+            color: var(--ink-muted);
+            margin-top: 0.15rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-arrow {
+            color: var(--ink-muted);
+            display: inline-flex;
+            align-items: center;
+            transition: transform 0.15s ease, color 0.15s ease;
+        }
+
+        .movie-card:hover .movie-arrow {
+            color: var(--accent-cool);
+            transform: translateX(3px);
+        }
+
+        .hub-empty {
+            display: none;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            color: var(--ink-muted);
+            font-size: 0.98rem;
         }
 
         @media (max-width: 600px) {
-            h1 {
-                font-size: 2.5rem;
+            .hub-shell {
+                padding: 1.5rem 1rem 4rem;
+            }
+
+            .movie-card {
+                grid-template-columns: 52px minmax(0, 1fr) 20px;
+                gap: 0.75rem;
+                padding: 0.95rem 0.5rem;
+            }
+
+            .movie-card h2 {
+                font-size: 1.12rem;
             }
         }
     </style>
+    <script>
+        (function () {
+            const theme = localStorage.getItem('con_theme') === 'light' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Cool Or Nostalgia</h1>
-            <div class="subtitle">Podcast Hub</div>
-        </header>
+    <div class="hub-shell">
+        <div class="hub-top">
+            <div>
+                <h1>Cool Or Nostalgia</h1>
+                <p class="hub-lead">Episode show notes &amp; iPad cheat sheets</p>
+            </div>
+            <button id="hub-theme-toggle" class="theme-btn" type="button" aria-label="Toggle light or dark mode" title="Toggle light or dark mode"></button>
+        </div>
 
-        <div class="movie-grid">
-            <a href="Escape_from_New_York_1981/index.html" class="movie-card">
-                <h2>Escape from New York</h2>
+        <div class="hub-toolbar">
+            <div class="hub-search-wrap">
+                <svg class="hub-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+                </svg>
+                <input id="hub-search" class="hub-search" type="search" placeholder="Filter episodes by title, year, or director..." autocomplete="off">
+            </div>
+            <span id="hub-count" class="hub-count">8 episodes</span>
+        </div>
+
+        <div class="movie-grid" id="movie-grid">
+            <a href="Escape_from_New_York_1981/index.html" class="movie-card" data-search="escape from new york 1981 john carpenter kurt russell">
                 <div class="movie-year">1981</div>
-                <div class="view-button">View Cheat Sheet</div>
+                <div class="movie-info">
+                    <h2>Escape from New York</h2>
+                    <div class="movie-meta">Dir. John Carpenter &middot; Kurt Russell, Lee Van Cleef</div>
+                </div>
+                <span class="movie-arrow" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
             </a>
 
-            <a href="Jumanji_1995/index.html" class="movie-card">
-                <h2>Jumanji</h2>
+            <a href="Jumanji_1995/index.html" class="movie-card" data-search="jumanji 1995 joe johnston robin williams kirsten dunst">
                 <div class="movie-year">1995</div>
-                <div class="view-button">View Cheat Sheet</div>
+                <div class="movie-info">
+                    <h2>Jumanji</h2>
+                    <div class="movie-meta">Dir. Joe Johnston &middot; Robin Williams, Bonnie Hunt</div>
+                </div>
+                <span class="movie-arrow" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
             </a>
 
-            <a href="Predator_1987/Predator_1987_CheatSheet.html" class="movie-card">
-                <h2>Predator</h2>
+            <a href="Predator_1987/Predator_1987_CheatSheet.html" class="movie-card" data-search="predator 1987 john mctiernan arnold schwarzenegger carl weathers">
                 <div class="movie-year">1987</div>
-                <div class="view-button">View Cheat Sheet</div>
-            </a>
-            
-            <a href="Masters_of_the_Universe_1987/Masters_of_the_Universe_1987_CheatSheet.html" class="movie-card">
-                <h2>Masters of the Universe</h2>
-                <div class="movie-year">1987</div>
-                <div class="view-button">View Cheat Sheet</div>
+                <div class="movie-info">
+                    <h2>Predator</h2>
+                    <div class="movie-meta">Dir. John McTiernan &middot; Arnold Schwarzenegger, Carl Weathers</div>
+                </div>
+                <span class="movie-arrow" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
             </a>
 
-            <a href="Lawnemower_Man/LawnmowerMan_CheatSheet.html" class="movie-card">
-                <h2>The Lawnmower Man</h2>
+            <a href="Masters_of_the_Universe_1987/Masters_of_the_Universe_1987_CheatSheet.html" class="movie-card" data-search="masters of the universe 1987 gary goddard dolph lundgren frank langella he-man">
+                <div class="movie-year">1987</div>
+                <div class="movie-info">
+                    <h2>Masters of the Universe</h2>
+                    <div class="movie-meta">Dir. Gary Goddard &middot; Dolph Lundgren, Frank Langella</div>
+                </div>
+                <span class="movie-arrow" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
+            </a>
+
+            <a href="Lawnemower_Man/LawnmowerMan_CheatSheet.html" class="movie-card" data-search="the lawnmower man 1992 brett leonard pierce brosnan jeff fahey stephen king">
                 <div class="movie-year">1992</div>
-                <div class="view-button">View Cheat Sheet</div>
+                <div class="movie-info">
+                    <h2>The Lawnmower Man</h2>
+                    <div class="movie-meta">Dir. Brett Leonard &middot; Pierce Brosnan, Jeff Fahey</div>
+                </div>
+                <span class="movie-arrow" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
             </a>
 
-            <a href="Sunshine_2007/index.html" class="movie-card">
-                <h2>Sunshine</h2>
+            <a href="Sunshine_2007/index.html" class="movie-card" data-search="sunshine 2007 danny boyle alex garland cillian murphy chris evans">
                 <div class="movie-year">2007</div>
-                <div class="view-button">View Cheat Sheet</div>
+                <div class="movie-info">
+                    <h2>Sunshine</h2>
+                    <div class="movie-meta">Dir. Danny Boyle &middot; Cillian Murphy, Chris Evans</div>
+                </div>
+                <span class="movie-arrow" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
             </a>
 
-            <a href="Demolition_Man_1993/index.html" class="movie-card">
-                <h2>Demolition Man</h2>
+            <a href="Demolition_Man_1993/index.html" class="movie-card" data-search="demolition man 1993 marco brambilla sylvester stallone wesley snipes sandra bullock">
                 <div class="movie-year">1993</div>
-                <div class="view-button">View Cheat Sheet</div>
+                <div class="movie-info">
+                    <h2>Demolition Man</h2>
+                    <div class="movie-meta">Dir. Marco Brambilla &middot; Sylvester Stallone, Wesley Snipes</div>
+                </div>
+                <span class="movie-arrow" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
             </a>
 
-            <a href="12_Monkeys_1995/12_Monkeys_1995_CheatSheet.html" class="movie-card">
-                <h2>12 Monkeys</h2>
+            <a href="12_Monkeys_1995/12_Monkeys_1995_CheatSheet.html" class="movie-card" data-search="12 monkeys twelve monkeys 1995 terry gilliam bruce willis brad pitt">
                 <div class="movie-year">1995</div>
-                <div class="view-button">View Cheat Sheet</div>
+                <div class="movie-info">
+                    <h2>12 Monkeys</h2>
+                    <div class="movie-meta">Dir. Terry Gilliam &middot; Bruce Willis, Brad Pitt</div>
+                </div>
+                <span class="movie-arrow" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
             </a>
         </div>
+
+        <div id="hub-empty" class="hub-empty">No matching episodes found. Try another title, year, or director.</div>
     </div>
+
+    <script>
+        (function () {
+            const btn = document.getElementById('hub-theme-toggle');
+            function syncTheme(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('con_theme', theme);
+                const isLight = theme === 'light';
+                btn.innerHTML = isLight
+                    ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
+                    : '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>';
+            }
+            syncTheme(localStorage.getItem('con_theme') === 'light' ? 'light' : 'dark');
+            btn.addEventListener('click', function () {
+                syncTheme(localStorage.getItem('con_theme') === 'light' ? 'dark' : 'light');
+            });
+
+            const input = document.getElementById('hub-search');
+            const cards = Array.from(document.querySelectorAll('.movie-card'));
+            const countEl = document.getElementById('hub-count');
+            const emptyEl = document.getElementById('hub-empty');
+
+            input.addEventListener('input', function () {
+                const q = input.value.trim().toLowerCase();
+                let visible = 0;
+                cards.forEach(function (card) {
+                    const haystack = (card.getAttribute('data-search') || card.textContent).toLowerCase();
+                    const match = !q || haystack.indexOf(q) !== -1;
+                    card.style.display = match ? '' : 'none';
+                    if (match) visible++;
+                });
+                countEl.textContent = visible + (visible === 1 ? ' episode' : ' episodes');
+                emptyEl.style.display = visible === 0 ? 'block' : 'none';
+            });
+        })();
+    </script>
 </body>
 </html>
